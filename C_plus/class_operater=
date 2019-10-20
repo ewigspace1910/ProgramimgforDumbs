@@ -1,0 +1,57 @@
+#include "iostream"
+
+using namespace std;
+
+class sothuc{
+    private :
+		int thuc,ao;
+    public:
+		sothuc(){
+			thuc=ao=0;
+		}
+		// ham tao macdinh
+
+		sothuc( sothuc &x){
+			this->thuc=x.thuc;
+			this->ao  =x.ao;
+		}
+		// ham tao sao chep
+
+		sothuc( int x, int y ){
+			this->thuc =x;
+			this->ao   =y;
+		}
+		// ham tao co doi so
+
+		const sothuc& operator= (const sothuc &h );
+		// dinh nghia lai toan tu gan lien tiep x=y=z
+		// tra ve tham chieu
+		// const o dau ham nham yeu cau ham khong lam thay doi so lieu ben trong
+
+		friend  ostream& operator<< (ostream& os, const sothuc &x);
+		// dinh nghia trong toan tu
+		// dung ham friend de cach su dung giong goi 1 ham binh thuong
+		// ham ban khong co con cho this, nhung dung data of class thông qua tham chieu đối
+};
+const sothuc& sothuc :: operator= (const sothuc &h ){
+
+			this->thuc=h.thuc;
+			this->ao = h.ao;
+			return h;
+			// tra lai bi danh cua h(thamchieu h)
+
+}
+// phuong thuc class thi khai bao luon phai co pham vi class o truoc ten goi [class] ::[phuong thuc]
+
+ostream& operator<< (ostream& os, const sothuc &x){
+		os << "so thuc : "<< x.thuc << "." << x.ao << endl;
+		return os;
+}
+// ham ban thi khai bao ben ngoai tuong tu ham thuong
+
+int main(){
+	sothuc a,b(1,2),c(b);
+	cout << a << b << c;
+	b=c=a;
+	cout << a << b << c;
+}
