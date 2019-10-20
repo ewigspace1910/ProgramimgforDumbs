@@ -1,0 +1,1 @@
+about inheritance of class
