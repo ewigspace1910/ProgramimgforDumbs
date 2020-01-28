@@ -114,7 +114,7 @@ h1:hover {
 }
 
 /*  animation */
-@keyframe anim{
+@keyframes anim{
 	0% {margin-left:50%;}
 	25% {margin-left:25%;}
 	50% {margin-left:0%;}
