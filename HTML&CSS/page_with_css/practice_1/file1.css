@@ -1,0 +1,133 @@
+body {
+	color : #000000;
+}
+
+.colors {
+	background-color : #00ffdd;
+}
+/* fload layout */
+#header {
+	background-color : #3000ff
+}
+
+#left {
+	float : left;
+	clear : left;
+	width : 20%;
+	
+	border : 1px double #0000ff;
+	background-color : yellow;
+	
+
+    padding: 5px;
+}
+#right{
+	float : left;
+	width : 75%;
+	
+	border :1px double #0000ff;
+	background-color : red;
+	
+	
+    padding: 5px;
+}
+#footer{
+	clear: both;
+    text-align: center;
+    
+	margin-top: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    
+	background-color: #544b4b;
+    box-shadow: 4px -1px 10px 2px black;
+    text-shadow: 3px 1px 3px black;
+}
+
+
+h1 {
+	text-align : center;
+}
+
+label {
+	float : left;
+	clear : left;
+}
+
+
+button {
+	clear : both;
+	float : left;
+	
+	margin-top : 5px;
+	margin-left : 40%;
+}	
+
+input {
+	float : left;
+	width : 75%;
+	margin-left: 5px;
+	text-align : right;
+	
+	transition : all 2s ease-in;
+}
+
+/* opacity */
+
+.blur{
+	opacity : .6;
+}
+
+/* transition and transformation*/
+
+.transformations{
+	
+	border: 5px  black solid;
+	border-radius: 13px;
+	margin-top: 10px;
+	width: 50%;
+	height: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	
+	transition : all 2s ease-out;
+}
+
+.transformations:hover{
+	transform : rotate(90deg);
+	-webkit-transform :rotate(90deg);
+	-ms-transform : rotate(90deg);
+}
+input:hover {
+	color : blue;
+	background-color : green;
+}
+
+h1 {
+	color : black;
+	font-size : 300%;
+	transition : color 1s ease-in;
+}
+h1:hover {
+	color : white;
+}
+
+/*  animation */
+@keyframe anim{
+	0% {margin-left:50%;}
+	25% {margin-left:25%;}
+	50% {margin-left:0%;}
+	75% {margin-left:25%;}
+	100% {margin-left:50%;}
+}
+
+#anime {
+	border : 2px solid red;
+	margin : 10px;
+	-webkit-animation : anim 5s linear infinite;
+}
+
+#anime p {
+	text-align :center;
+}
