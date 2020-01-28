@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang = "en-US">
+	<head>
+		<meta charset = "UTF-8" />
+		<title>border imagine</title>
+		<style>
+			#div1 {
+				background-color : #ffffff;
+				width : 75%; 
+				margin-right : auto;
+				margin-left : auto;
+				padding : 15px;
+				
+				border: 15px solid transparent;
+				border-width : 15px;
+				border-image : url("pagewithcss/border2.png") 25% repeat;
+				-webkit-border-image : url("pagewithcss/border2.png") 25% repeat;
+				
+			}
+			#div1 p {
+				text-align : center;
+				font : bold 150% "Comic Sans MS";
+			}
+		</style>
+	</head>
+	<body style = "background-color : HSL(120,100%,45%)">
+		<h1>BORDER BY IMAGINE</h1>
+		<hr/>
+		<p>
+			imagine 
+			<img src="pagewithcss/border1.png" width="100px" height="100" alt="border1"/>
+		</p>
+		<div id = "div1">
+			<p>Frame using border-image</p>
+			<p>phai tao border co ban truoc, roi de border anh len</p>
+		</div>
+		
+	</body>
+</html>

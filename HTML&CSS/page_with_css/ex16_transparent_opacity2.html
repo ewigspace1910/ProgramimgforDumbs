@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang = "en-US">
+	<head>
+		<meta charset = "UTF-8"	 />
+		<meta content = "mieu ta blbla" name = "description"/>
+		<title>trasparent and opaticy</title>
+		<style type="text/css" >
+			body {
+				background-image : url("img/h1.jpg");
+				background-repeat : no-repeat;
+				font : "Comic Sans MS";
+			}
+			h1 {
+				color : hsla(153, 76%, 39%,0.7);
+			}
+			#box {
+				position : absolute;
+				top : 300px;
+				left : 300px;
+				height : 300px;
+				width : 600px;
+				border : 5px solid red;
+				background-color : black;
+				
+				opacity :.3;
+			}
+		</style>
+	</head>
+	<body >
+		<h1>a DIV with patical trasparent superimposed on an image</h1>
+		<div id = "box" >
+			<p style="color: white;
+				width : 75%;
+				margin-left : auto;
+				margin-right: auto;
+				font-size :200%
+				
+			">
+				this is opacity/trasparent not hsla <br/>
+				hsla just adjust color of background,  "opacity" attribute even adjust more elements : video, img, ...
+			</p>
+		</div>
+		
+	</body>
+	
+</html>

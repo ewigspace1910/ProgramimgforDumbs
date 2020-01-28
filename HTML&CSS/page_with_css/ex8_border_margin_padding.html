@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang = "en-US" >
+	<head>
+		<meta charset = "UTF-8" />
+		<title>Margin-Border-Padding-content</title>
+		<style>
+			body {
+				background-color : #FA6699;
+			}
+			h1 {
+				text-align : center;
+			}
+			div:not(#mainbody) {
+				background-color : yellow;
+				border : red double ;
+				border-width : 15px;
+				
+				
+				margin : 10px;
+				padding: 20px;
+
+			}
+			ul li {
+				border : 1px solid blue;
+			}
+			#margin {
+				margin : 2px;
+			}
+			#mainbody {
+				border: #07821c solid 2px;
+				background-color: HSLA(75,100%,50%,50%);
+				width: 75%;
+				<!--50% of mom'element-->: ;
+				margin-top: auto;
+				margin-right: auto;
+				margin-left: auto;
+			}
+			p {
+				border : black solid 2px;
+			}
+			.p2{
+				margin-left : 50%;
+			}
+			.p3{
+				margin-right : 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>div 1</h1>
+		<div>
+			<p> this is a paragraph</p>
+			<p> this is a paragraph</p>
+		</div>
+		<hr/>
+		<div>
+			<p>Each block element has several layers of space around it suck as </p>
+			<ul>
+				<li>Content : paraphase,... </li>
+				<li>padding : space outside content</li>
+				<li>border  : goes around the padding</li>
+				<li id="margin" >Margin : space outside the border, Lề</li>
+			</ul>
+		</div>
+		<hr>
+		<h1>centering</h1>
+		<p> this trick is most frequently used to center table or list or div</p>
+		<div id = "mainbody">
+			<p class = "p2"> with margin-left </p>
+			<p class = "p3"> with margin-right</p>
+		</div>
+	</body>
+</html>

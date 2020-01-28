@@ -1,0 +1,13 @@
+/*  comment-style-sheet */
+
+#one {
+				
+	background-image : linear-gradient(to right, HSLA(90,100%,50%,0),HSLA(90,100%,50%,1));
+}
+div {
+	color : white;
+	border : solid 2px gray;
+	width : 75%;
+	margin-left : auto;
+	margin-right : auto;
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang= "en-US">
+	<head>
+		<meta charset = "UTF-8" />
+		<title>some pseudo</title>
+		<style>
+			.mylist li:first-child {
+				font : italic;
+				color : #FA3366;
+			}
+			#mylist2>li:nth-child(2n+1){
+				border : 1px solid blue;
+			} 
+			#mylist2 li:nth-child(even){
+				background-color : red;
+				border : 1px solid yellow;
+			}
+			input[ type = "button" ]:hover{
+				background-color : HSL(180,100%,30%);
+			}
+			input[ type = "text" ]:focus{
+				color : red;
+			}
+			a:link {
+				color : green;
+			}
+			a:hover{
+				border : 1px solid red;
+			}
+			a:active{
+				color : yellow;
+				background-color : blue;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>mylist  </h1>
+		<ul class="mylist" >
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+		</ul>
+		<hr/>
+		<h1>mylist2</h1>
+		<ol id="mylist2">
+			<li> mot </li>
+			<li> hai </li>
+			<li> ba </li>
+		</ol>
+		<hr/>
+		<form action = "">
+			<fieldset>
+				<p>
+					<label>account</label>
+					<input type="text" id="txtacc" value="" />
+					<label>password</label>
+					<input type="password" id="pass" value"" />
+					<br/>
+					<br/>
+					<input type="button" value="sign in" id="signin" />
+				</p>
+				<p>
+					<label>key</label>
+					<select id="selkey" >
+						<option value="1" >yy</option>
+						<option value="2" >yyi</option>
+						<option value="3" >yY</option>
+						<option value="4" >yyy</option>
+						<option value="5" >Yy</option>
+					</select>
+				</p>
+			</fieldset>
+		</form>
+		<hr/>
+		<a href = "http://www.google.com" target = "_blank" > back </a>
+		<p> pseudo class allow you supply special style for class when user contact them</p>
+	</body>
+</html>
