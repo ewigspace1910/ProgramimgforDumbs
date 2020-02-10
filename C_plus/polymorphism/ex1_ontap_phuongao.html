@@ -1,0 +1,57 @@
+#include "iostream"
+
+using namespace std;
+
+class A {
+	private :
+		int a;
+	public :
+		A(int x){
+			a=x;
+		}
+		 virtual void xuat(){
+			cout << "\nlop A la " << a;
+		}
+};
+class B :public A{
+	private :
+		int b;
+	public :
+	B(int x, int x1) : A(x){
+		b=x1;
+	}
+	void xuat() {
+		cout << "\nlop B la : " << b;
+		A::xuat();
+	}
+	void in(){
+		cout << "\nxuat thong tin gov cus lop :  " << endl;
+		this->xuat();
+	}
+};
+class B2 : public B {
+	private :
+		int b2;
+	public :
+		B2(int x1,int x2, int x3) : B(x1,x2) {
+			this->b2=x3;
+		}
+		void xuat (){
+			cout << "\nlop Bo sung B2 la :" << b2;
+			cout << " b2= " <<b2;
+			B::xuat();
+		}
+};
+
+int main(){
+	B2 a(1,2,3);
+	a.in();
+	cout << endl;
+	A *p=&a;
+	p->xuat();
+}
+// khi khong co virtual thi a.in ke thua tu class B se lien ket toi dia chi cua
+// method B::xuat (vi dung con tro this)
+// con p->xuat la phuong thuc tinh len con tro nao goi thi method lop do dc hien
+// them virtual vao xuat class A se lam cho may hieu nhung phuong thuc cua lop
+// dan xuat trung ten se la method ao va phai xem xet loai dia chi bien nhan
