@@ -1,0 +1,44 @@
+body {
+	background-color : #cccccc; 
+}
+
+/* fixedRelative.css */
+h1,#menu h2 {
+	text-align : center;
+}
+#menu {
+	position : fixed;
+	width: 18%;
+}
+#menu ul {
+	list-style-type : none;
+}
+#menu li {
+	width : 150px;
+	background-color : white;
+	margin-left: -2em; 
+	text-align : center;
+}
+#menu li ul{
+	display : none;
+}
+#menu li:hover>ul{
+	display : block;
+}
+#menu a {
+	text-decoration : none;
+	color : black;
+	display : block;
+}
+#menu a:hover, #menu li:hover{
+	background-color : red;
+}
+/*relative part */
+.content {
+ position: relative;
+ left: 20%;
+ width: 80%;
+}
+.content h2 {
+ border-top: 3px black double;
+}

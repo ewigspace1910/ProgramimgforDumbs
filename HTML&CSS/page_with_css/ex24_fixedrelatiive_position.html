@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta charset="strick position layout" name="descripers" />
+		<title>fixed position menu</title>
+		<link rel="stylesheet" href="exam24.css" type="text/css" />
+	</head>
+	<body>
+		<h1>Fixed Position</h1>
+		<div id = "menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href = "#alpha">Alpha</a></li>
+				<li><a href = "#beta">Beta</a></li>
+				<li><a href = "#gamma">Gamma</a></li>
+				<li><a href = "#delta">Delta</a></li>
+			</ul>
+		</div>
+		<div class = "content" id = "alpha">
+			<h2>Alpha</h2>
+			<p>The HTML has only a few noteworthy characteristics:</p>
+			<ul>
+				<li>It has a menu. The div named menu contains a list of links (like most menus).</li>
+				<li>The menu has internal links. : gamma button 
+					<p>The [a href= “#alpha”] Alpha ] code means create a link to the element in this page with the ID alpha.</p>
+				</li>
+				<li>The page has a series of content divs
+					<p> Most of the page’s content
+						appears in one of the several divs with the content class. This class
+						indicates all these divs will share some formatting</p>
+				</li>
+				<li>The content divs have separate IDs. </li>
+			</ul>
+		</div>
+		<div class = "content" id = "beta">
+			<h2>Beta</h2>
+			<p>
+			Most of the CSS is familiar if you’ve looked over the other chapters in this
+			minibook. I changed the menu list to make it look like a set of buttons, and
+			I added some basic formatting to the headings and borders. The interesting
+			thing here is how I positioned various elements.
+			</p>
+		</div>
+		<div class = "content" id = "gamma">
+			<h2>Gamma</h2>
+			<p>here is how to buiding a fixed menu</p>
+			<ul>
+				<li>1. Set the menu position to fixed by setting the position attribute to fixed.</li>
+				<li>2. Give the menu a width with the width attribute.</li>
+				<li>3.Consider the menu position by explicitly setting the top and left attributes.</li>
+				<li>4. Set content position to relative.</li>
+				<li>5. Change content’s left attribute to 20 percent.(100-menu)</li>
+				<li>6.Give content a width property.</li>
+			</ul>
+		</div>
+		<div class = "content" id = "delta">
+			<h2>Delta</h2>
+			<p>In reality, I rarely use absolute positioning for page layout. It’s just too difficult to get working and too inflexible for the range of modern browsers.
+			However, it is still used in certain specialty situations like web game development where the programmer is deliberately subverting normal layout
+			schemes for more control of the visual interface</p>
+		</div>
+ 
+	</body>
+</html>

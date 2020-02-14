@@ -1,0 +1,52 @@
+body {
+	background-color :#cccccc;
+}
+#all {
+	position : absolute;
+	left : 0px;
+	top : 0px;
+	width : 800px;
+	height : 600px;
+	background-color :#ccffcd;
+	border : 1px solid green;
+}
+#head {
+	position : absolute;
+	left : 0px;
+	top : 0px;
+	width : 800px;
+	height : 100px;
+	border : 1px solid gray;
+	text-align : center;
+}
+#menu {
+	position : absolute;
+	left : 0px;
+	top : 100px;
+	width : 140px;
+	height : 500px;
+	padding-left : 5px;
+	padding-right : 5px;
+	
+	border : 1px solid red;
+	overflow : auto;
+}
+#content {
+	position : absolute;
+	left :150px;
+	top : 100px;
+	width : 645px;
+	height : 500px;
+	padding-left: 5px; 
+	
+	border : 1px solid blue;
+	
+}
+#footer {
+	position : absolute;
+	width : 800px;
+	border : 1px solid green;
+	left : 0;
+	top : 600px;
+	text-align : center;
+}

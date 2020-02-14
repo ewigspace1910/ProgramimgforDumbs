@@ -1,0 +1,102 @@
+body {
+	background-color : #cccccc;
+}
+h2 {
+	text-align : center;
+}
+
+#all {
+	position : relative;
+	width : 90vw;
+	height : 90vh;
+	margin-left : auto;
+	margin-right : auto;
+	
+	display : box;
+	display : -webkit-box;
+	display : -moz-box;
+	display : -mz-box;
+	
+	box-orient : vertical;
+	-webkit-box-orient : vertical;
+	-mz-box-orient : vertical;
+	-moz-box-orient : vertical;
+}
+
+header, footer {
+	/* make to block element for semantic tag */
+	display : block;
+	width : 100%;
+	text-align : center;
+	
+	box-flex : 1;
+	-webkit-box-flex :1;
+	-moz-box-flex : 1;
+	-mz-box-flex : 1;
+}
+
+#main {
+	display : box;
+	display : -webkit-box;
+	display : -moz-box;
+	display : -mz-box;
+	
+	box-orient : horizonal;
+	-webkit-box-orient : horizonal;
+	-mz-box-orient : horizonal;
+	-moz-box-orient : horizonal;
+	
+	box-flex : 5;
+	-webkit-box-flex :5;
+	-moz-box-flex : 5;
+	-mz-box-flex : 5;
+	
+	width : 100%;
+	
+}
+#nav  {
+	box-flex : 1;
+	-mz-box-flex : 1;
+	-webkit-box-flex : 1;
+	-ms-box-flex : 1;
+}
+#article {
+	box-flex : 6;
+	-mz-box-flex : 6;
+	-webkit-box-flex : 6;
+	-ms-box-flex : 6;
+	
+	padding : 10px;
+}
+
+/* menu nav */
+.menu ul {
+	list-style-type : none;
+	margin-left : -1.5em;
+	margin-right: 1em;
+	font-size : 150%;
+	font-size : bold;
+}
+.menu ul li {
+	text-align : center;
+	border-bottom : 1px solid rbga(255,255,255,.1);
+	border-top : 1px solid black;
+	
+	width : 100%;
+	height : 30px;
+	background-color : #ccccff;
+}
+.menu ul li a {
+	text-decoration : none;
+	color : black;
+	display : block;
+	transition : .5s;
+}
+.menu ul li a:hover{
+	background-color : #ccffcc;
+	border-left : 1px solid black;
+	margin-left : 20px;
+}
+.menu ul li:hover{
+	background-color : #ccddcc;
+}

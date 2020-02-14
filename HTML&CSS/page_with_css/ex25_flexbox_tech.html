@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+ <head>
+	<title>flexTwoCol.html</title>
+	<meta charset = "UTF-8" />	
+	<link rel="stylesheet" href="exam25_1.css" type="text/css" />
+ </head>
+
+<body>
+  <div id = "all">
+	<header>
+		<hgroup>
+			<h1>Two Column Demo</h1>
+			<h2>Using flexbox layout</h2>
+		</hgroup>
+	</header>
+	<div id = "main">
+
+		<div id = "nav">
+			<h2>Navigation List</h2>
+			<div class="menu">
+				<ul>
+					<li><a href = "#">one</a></li>
+					<li><a href = "#">two</a></li>
+					<li><a href = "#">three</a></li>
+					<li><a href = "#">four</a></li>
+					<li><a href = "#">five</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div id = "article">
+			<h2>Main content</h2>
+			<h2>determining your layout scheme</h2>
+			<p>
+				All these layout options might just make your head spin. What’s the right
+strategy? Well, that depends.
+The most important thing is to find a technique you’re comfortable with that
+gives you all the flexibility you need.
+Floating layouts are generally your best bet, but it’s good to know how absolute positioning works. Every once in a while, you find a situation where
+absolute positioning is a good idea, but generally it’s more difficult to pull off
+than the floating mechanism.
+Absolute positioning seems very attractive at first because it promises so
+much control. The truth is, it’s pretty complicated to pull off well, it isn’t
+quite as flexible as the floating layout techniques, and it’s hard to make it
+work right in older browsers.
+Sometimes, fixed and relative positioning schemes are handy, as in the example introduced in the fixed menu example described in this chapter.
+The flexbox approach seems very promising, but it’s currently tedious to
+write as you’ll need to repeat your code for all the browser prefixes. When it
+can be used without prefixes, it will probably become the dominant scheme.
+Sometimes, you’ll find it’s best to combine schemes. (It’s difficult to combine
+absolute positioning with another scheme, but you can safely combine floating, fixed, and relative positioning techniques most of the time.)
+The main point is to understand the various options available to you so you
+can make a good choice for whatever project you’re currently working on.			
+			</p>
+		
+		</div>
+	</div>
+	<footer>
+		<h2>Andy Harris</h2>
+		<a href = "http://www.aharrisbooks.net">links contact</a>
+	</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+body {
+	background-color : #cccccc;
+}
+
+/* work with absolute position */
+#hinh1 {
+	width : 100px;
+	height : 100px;
+	background-color : blue;
+}
+#hinh2 {
+	width : 100px;
+	height : 100px;
+	background-color : black;
+}
+
+/* add position attribute to indicate extacly position of element */
+/* if browse is resized, these position not change*/
+/* should set margin to 0 */
+#hinh1 {
+	position : absolute;
+	left : 0px;
+	top : 0px;
+	margin : 0px;
+	z-index : 1;
+	/*z-index help you set position of element ovelaps others */
+	/*for exam, menu should temporarily apprear on top the other text */
+}
+#hinh2 {
+	position :absolute;
+	left : 50px;
+	top : 50px;
+	margin : 0px;
+}
+#hinh3 {
+	position :absolute;
+	right : 150px;
+	top : 50px;
+	width : 100px;
+	height : 100px;
+	background-color : red;
+}
+

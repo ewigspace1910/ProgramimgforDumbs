@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset = "UTF-8" />
+		<meta content = "fluid layout with 3 col" name = "descripes" />
+		<title>three colummes </title>
+		<style >
+			body {
+				background-color : gray;
+			}
+			h1, h2 {
+				text-align : center;
+			}
+			#header{
+				border : solid 2px black;
+				background-color : red;
+			}
+			#left {
+				border : solid 2px black;
+				background-color : yellow;
+				
+				clear : left;
+				float : left;
+				width : 20%;
+				min-height : 100px;
+				
+				overflow : hidden;
+			}
+			#right {
+				border : solid 2px black;
+				background-color : green;
+				
+				float : left;
+				width : 20%;
+				min-height : 100px;
+			}
+			.center{
+				border : solid 2px black;
+				background-color : purple;
+				
+				float : left;
+				width : 55%;
+				max-height : 100px;
+				overflow : scroll;
+			}
+			footer {
+				border : solid 2px black;
+				background-color : #8bc34a;
+				
+				clear : both;
+				
+				margin: 50px;
+				padding : 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<h1>title : overflow</h1>
+		</div>
+		<div id="nav">
+			<p>navigation</p>
+		</div>
+		<div id="left">
+			<h1>left</h1>
+			<p>blablablablablablablablablablablablablab
+			lablablablablablablablablablablablablablablabla
+			blablablablblablablablablablablablablablablablablablablablablabla
+			blablablablablablablablablablablablablablablablablabla
+			</p>
+		</div>
+		<div class="center" >
+			<div id="section1" >
+				<h2>section1</h2>
+				<p>overflow attribute help u improve the looks pape </p>
+			</div>
+			<div id="section2" >
+				<h2>section 2</h2>
+				<p>value include : auto, scroll, hidden, invialbe,...</p>
+			</div> 
+		</div>
+		
+		<div id="right">
+			<h1>right</h1>
+		</div>
+		<!-- semantic tag -->
+		<footer>
+			<h2>NGUYEN DUC ANH </h2>
+			<p> no coppy right :) </p>
+		</footer>
+	</body>
+</html>

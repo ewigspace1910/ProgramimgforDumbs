@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta charset="strick position layout" name="descripers" />
+		<title>position layout with percention measuance</title>
+		<link rel="stylesheet" href="exam20.css" type="text/css" />
+	</head>
+	<body>
+		<div id="all">
+			<div id="head"></div>
+			<div id="nav">
+				<h1>title</h1>
+			</div>
+			<div id="left">
+				<div id="menu">
+					<ul>
+						<li><a href="#">home</a></li>
+						<li><a href="#step">part1</a></li>
+						<li><a href="#other">part2</a></li>
+						<li>more
+							<ul>
+								<li><a href="#">gg_sama</a></li>
+								<li><a href="#">youtube_chan</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="content" >
+				<div id="step">
+					<h2>Building the layout</h2>
+					<ul>
+						<li>Create an all container by building a div with the all ID</li>
+						<li>Specify the size and position of all.
+						<p>I want the content of the page to be centered in the browser window,
+						so I set its height and width to 90 percent, and its margin-left and
+						margin-top to 5 percent. In effect, this sets the margin-right and
+						margin-bottom to 5 percent also. These percentages refer to the all
+						div’s container element, which is the body, with the same size as the browser window.</p>
+						</li>
+						<li>Other percentages are in relationship to the all container.</li>
+						<li>Determine the heights.
+						<p>Remember, though, that the head accounts for 10 percent of the page space, so the height of both the menu and content
+						needs to be 90 percent.</p>
+						</li>
+						<li>Figure the general widths.</li>
+						<li>Compensate for margins.</li>
+					</ul>
+					<p>using percent meansuance rather pixil,... help layout to flexity :)</p>
+					<h3>bounuts in exam :</h3>
+					<ul>
+						<li>href="[id of part]" call "gram button". exam href="header"</li>
+					</ul>
+				</div>	
+				<div id="other">
+					<h3>Exploring Other Types of Positioning</h3>
+					<ul>
+						<li><abbr title="tuong doi">relative</abbr>
+							<p>Set position: relative when you want to move an element from its default position. For example, if you set position to relative and top: -10px, the element would be placed 10 pixels higher on
+the screen than normal</p>
+						</li>
+						<li><abbr title="dat co dinh">fixed</abbr>
+							<p> Use fixed position when you want an element to stay in the same
+place, even when the page is scrolled. This is sometimes used to keep a
+menu on the screen when the contents are longer than the screen width.
+If you use fixed positioning, be sure you’re not overwriting something
+already on the screen.</p>
+						</li>
+					</ul>
+					<p>we learn that at the following lesson</p>
+					<p>remember, the real trick is to use appropiciate  combinations of technique
+						position scheme to solve interesing problem
+					</p>
+				</div>
+			</div>
+			<div id="footer">
+				<h3> &copy; Nocoppyright from NDA1910</h3>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,122 @@
+/*file css for exe 20*/
+h1 {
+	text-align :center;
+	color : white;
+}
+/* structure */
+nav {
+	width : 80%;
+	/*border : 5px solid #1c8850;*/
+	margin-left :auto;
+	margin-right :auto;
+}
+
+#left {
+	clear : left;
+	float :left;
+	margin : 5px;
+	width : 20%;
+	background-color : #1c1f21;
+}
+#center{
+	float : left;
+	margin : 15px;
+	width : 55%;
+	background-color : #3a4644;
+	
+}
+#right {
+	float : left;
+	margin : 5px;
+	width :20%;
+	overflow : hidden;
+	background-color : #0d1715;
+}
+
+footer{
+	clear : both;
+	margin-top :10px;
+	border : 5px solid black;
+}
+
+/* nest menu */
+#nest_menu li ul {
+	/*just apply ul tag which is child of li */
+	display : none;
+}
+#nest_menu li:hover > ul {
+	/* '>' symbol just call direc childs F! of parent element */
+	display : block;
+	margin-left : -1.5em;
+}
+
+/* make beutyful menu */
+#nest_menu li {
+	/*apply whole li tags in id-"#nest_menu" */
+	list-style-type : none;
+	width : 150px;
+	border : 2px solid #cccccc;
+	
+	margin-left : -1em;
+	margin-bottom : 2px;
+	
+	background-color : green;
+	text-align : center;
+	
+}
+#nest_menu a {
+	color : black;
+	text-decoration : none;
+	display : block;
+}
+#nest_menu a:hover {
+	background-color : white;
+}
+#nest_menu li:hover {
+	background-color : red;
+}
+
+/* building a horizontal menu */
+
+#advance{
+	clear : left;
+}
+#horiznal_menu {
+	margin : 30px;
+	padding : 10px;
+}
+
+#horiznal_menu ul {
+	margin-left : -2em;
+}
+#horiznal_menu li {
+	list-style-type : none;
+	text-align : center;
+	border : 1px solid gray;
+	background-color : #cccccc;
+	width : 150px;
+	
+	float : left;
+}
+#horiznal_menu a {
+	text-decoration : none;
+	display : block;
+}
+#horiznal_menu a:hover {
+	background-color : gray;
+}
+#horiznal_menu li ul {
+	display : none;
+}
+#horiznal_menu li:hover > ul {
+	display : block;
+}
+#horiznal_menu li li li {
+	margin-left :1em;
+	/*this is smart strick to indent nested list-item
+	 this selector is active on an element which has three list items in its family tree
+	it will work only "li tag" which three levels deep count from pre-litag;
+	(đại khái cứ cái li tag thứ 3 trở đi thì áp dụng, vi li của li của li mà, quá hay)
+	
+	*/
+}

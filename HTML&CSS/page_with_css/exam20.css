@@ -1,0 +1,90 @@
+/*file css for exe 20*/
+h1 {
+	text-align :center;
+}
+/* structure */
+nav {
+	width : 80%;
+	/*border : 5px solid #1c8850;*/
+	margin-left :auto;
+	margin-right :auto;
+}
+
+#left {
+	clear : left;
+	float :left;
+	margin : 5px;
+	width : 20%;
+	background-color : #1c1f21;
+}
+#center{
+	float : left;
+	margin : 5px;
+	width : 55%;
+	background-color : #3a4644;
+}
+#right {
+	float : left;
+	margin : 5px;
+	width :20%;
+	overflow : hidden;
+	background-color : #0d1715;
+}
+
+footer{
+	clear : both;
+	border : 5px solid black;
+}
+
+/* menu */
+#menu_left li {
+	list-style-type : none;
+	margin-left : -2.5em;
+	margin-bottom : 5px;
+	
+	width : 100px;
+	text-align : center;
+	
+}
+#menu_left a {
+
+	text-decoration : none;
+	color : black;
+	display : block;
+	background-color : white;
+	box-shadow : 5px 5px 5px gray;
+	border-radius : 3em;
+}
+#menu_left a:hover {
+	background-color : white;
+	box-shadow : 3px 3px 3px gray;
+	border : none;
+}
+
+/* menu on navigation */
+
+#menu_nav li {
+	list-style-type : none;
+	margin-left: -1em;
+	margin-right : 15px;
+	width: 150px;
+	height : 100px;
+	text-align : center;
+	
+	float :left;
+
+}
+#menu_nav a {
+	text-decoration : none;
+	color : black;
+	display : block;
+	height : 30px;
+	background-color : white;
+	border :3px solid #b91b1b;
+	
+	/* float: left; */
+}
+#menu_nav a:hover {
+	background-color : gray;
+	border : none;
+}
