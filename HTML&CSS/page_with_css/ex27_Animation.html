@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  
+  animation : example 4s 2s ease infinite alternate;
+}
+
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+<div>
+	<ul>
+		attribute in animation 
+		<li>name : example</li>
+		<li>time duration : 4s</li>
+		<li>delay : 2s</li>
+		<li>type action : ease, ease-in,ease-out, linear</li>
+		<li>repeation : infinite, 3</li>
+		<li>Reverse Direction : nomal, reverse, alternate</li>
+	</ul>
+</div>
+
+</body>
+</html>
