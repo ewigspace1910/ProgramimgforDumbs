@@ -1,0 +1,140 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="valid input" name="describers" />
+		<link rel="stylesheet" href="exam.css" type="text/css" />
+		<title>valid input</title>
+		<script type="text/javascript">
+			// funciton init
+			var output;
+			function init(){
+				output = document.getElementById("divOutput");
+			}
+			// getElementById : indicate a Object;
+			function changeBgColor(){
+				var bgcolor = document.getElementById("selColor");
+				document.body.style.backgroundColor = bgcolor.value;
+			}
+			function orderFood(){
+				var ckkfood1 = document.getElementById("ckkfood1");
+				var ckkfood2 = document.getElementById("ckkfood2");
+				var ckkfood3 = document.getElementById("ckkfood3");
+				var result = "<ol> FoodList \n";
+				if (ckkfood1.checked == true){
+					result +="<li>"+ ckkfood1.value + "</li> \n"; 
+				}
+				if (ckkfood2.checked == true){
+					result +="<li>"+ ckkfood2.value + "</li> \n"; 
+				}
+				if (ckkfood3.checked == true){
+					result +="<li>"+ ckkfood3.value + "</li> \n"; 
+				}
+				result += "</ol>" ;
+				output.innerHTML = result;
+			}
+			// but sometime, not Object, but is Array with name,select multiple 
+			// such as "select multiple" "radiobbox"
+			function chooseWeapon(){
+				//var weapon = document.getElementByName("weapon");
+				var weapon = document.getElementsByName("weapon");
+
+				//weapon assign to array
+				var result = "<ol>  \n";
+				for(var i = 0;i<weapon.length;i++){
+					if(weapon[i].checked == true){
+						result += "<li>" + weapon[i].value + "</li> \n" ;
+					}
+				}
+				result += "<\ol>"
+				output.innerHTML = result;
+			}
+			//from multi-select.html
+			function showChoices(){
+				//retrieve data
+				var selLanguage = document.getElementById("selLanguage");
+				var result = "<h2>Your Languages<\/h2>";
+				result += "<ul> \n";
+				for (i = 0; i < selLanguage.length; i++){
+					currentOption = selLanguage[i];
+					//print it if it has been selected not checked
+					if (currentOption.selected == true){
+					result += " <li>" + currentOption.value + "<\/li> \n";
+					}
+				} // end for loop
+				result += "<\/ul> \n";
+				output.innerHTML = result;
+			 } // end showChoices
+		</script>
+	</head>
+	<body onload="init()">
+		<h1>Creating more valid input</h1>
+		<form action="" >
+			<fieldset>
+				<legend>select</legend>
+				<select id="selColor" size="3">
+					<option value="#ffffff">White</option>
+					<option value="#FF0000">Red</option>
+					<option value="#FFFF00">Yellow</option>
+					<option value="#FFCC00">Orange</option>
+					<option value="#FFCCDD">Plink</option>
+					<option value="#336600">Bold Green</option>
+					<option value="#000000">Black</option>
+					<option value="#00FF00">Green</option>
+					<option value="#663366">Indigo</option>
+					<option value="#FF00FF">Violet</option>
+					<option value="#cccccc">reset</option>
+				</select>
+				<button type="button" onclick = "changeBgColor()">start</button>
+			</fieldset>
+			<fieldset>
+				<legend>check box</legend>
+			
+				<input type="checkbox" value="chickkend" id="ckkfood1" />
+				<label for="ckkfood1">Chicken</label>
+			
+				<input type="checkbox" value="fish" id="ckkfood2" />
+				<label for="ckkfood2">Fish</label>
+				
+				
+				<input type="checkbox" value="milk" id="ckkfood3" />
+				<label for="ckkfood3">Milk</label>
+				
+				<button type="button" onclick = "orderFood()">Order Pizza</button>
+			</fieldset>
+			<fieldset>
+				<legend>radiobbox</legend>
+				<p>choose a weapon to fight The Dragon</p>
+				<div>
+					<label for="wp1">Swort</label>
+					<input type="radio" value="Swort" id="wp1" name="weapon" />
+					
+					<label for="wp2">Gun</label>
+					<input type="radio" value="Gun" id="wp2" name="weapon" />
+					
+					<label for="wp3">Robot</label>
+					<input type="radio" value="Robot" id="wp3" name="weapon" />
+					
+					<label for="wp4">None</label>
+					<input type="radio" value="None" id="wp4" checked="checked" name="weapon" />
+				</div>
+				<button type="button" onclick = "chooseWeapon()">start</button>
+			</fieldset>
+			<fieldset>
+				<label> Select the language(s) you know.(ctrl-click to select multiple lines)</label>
+				<select id = "selLanguage" multiple = "multiple" >
+					<option value = "HTML">HTML</option>
+					<option value = "CSS">CSS</option>
+					<option value = "JavaScript">JavaScript</option>
+					<option value = "PHP">PHP</option>
+					<option value = "MySQL">MySQL</option>
+					<option value = "Java">Java</option>
+					<option value = "VB.NET">VB.NET</option>
+					<option value = "Python">Python</option>
+				</select>
+				<button type = "button" onclick = "showChoices()"> Submit</button>
+			</fieldset>
+
+		</form>
+		<div id="divOutput"></div>
+	</body>
+</html>

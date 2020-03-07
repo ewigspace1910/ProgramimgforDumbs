@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+ <head>
+	<title>flexTwoCol.html</title>
+	<meta charset = "UTF-8" />	
+	<meta content = "javascritp" name="descriper" />
+	<link rel="stylesheet" href="exam.css" type="text/css" />
+	<script type="text/javascript">
+		// Hello, world! , alert : warring dialog
+		alert("Hello, World!");
+		var person = "";
+		person = prompt("what is your name ?");
+		// alert without "" to indicated variable
+		alert( person);
+		//combine variable and text
+		alert("im chrome, hello " + person +  " !");
+		// propetiea, method of person : object
+		alert(" the name : " + person + " have " + person.length + " character" );
+		//from stringMethods.html
+		var text = new String;
+		text = prompt("Please enter some text.");
+
+		alert("I'll shout it out:");
+		alert(text.toUpperCase());
+
+		alert("Now in lowercase...");
+		alert(text.toLowerCase());
+
+		alert("The first 'a' is at letter...");
+		alert(text.indexOf("a"));
+
+		alert("The first three letters are ...");
+		alert(text.substring(0, 3));
+	</script>
+ </head>
+
+<body>
+	<h1>first javascritp</h1>
+	<p>
+	</p>
+	<ul>
+		<li>Pops up a dialog box. This modal dialog box is much like the one the alert() method creates.</li>
+		<li>Asks a question. The prompt() command expects you to ask the user a question</li>
+		<li>Provides space for a response. The dialog box contains a space for the
+			user to type a response and buttons for the user to click when he’s finished or wants to cancel the operation</li>
+		<li>Passes the information to a variable. The purpose of a prompt() command is to get data from the user, so prompts are nearly always connected to a variable. When the code is finished, the variable contains the indicated value</li>
+	</ul>
+</body>
+</html>

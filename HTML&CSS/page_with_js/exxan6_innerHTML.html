@@ -1,0 +1,46 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta content = "js" name="describes" />
+		<title>message-box</title>
+		<link rel="stylesheet" type="text/css" href="exam.css" />
+		<script type="text/javascript">
+			// from fisrt text box
+			function sayHi(){
+				var txtName = document.getElementById("txtInput");
+				var divOutput = document.getElementById("divOutput");
+				// get value
+				var name = txtName.value;
+				// change element html
+				divOutput.innerHTML = "<strong>" + name + "</strong>";
+				divOutput.innerHTML += " is funny name :)";
+			} // end sayhi
+		</script>
+		
+	</head>
+	<body>
+		<h1>Inner HTML Demo</h1>
+		<form action="">
+			<fieldset>
+				<label>Please type your name</label><p>
+				<input type = "text" id = "txtInput" />
+				<button type = "button"
+						onclick = "sayHi()">
+						Click Me
+				</button>
+			</fieldset>
+		</form>
+		<div id = "divOutput"> Watch this space. </div>
+		<p>
+			The first step (as usual with web forms) is to extract data from the input elements. Note that I can create a variable representation of any DOM element,not just form elements. The divOutput variable is a JavaScript representation of the DOM div.
+		</p>
+		<p>
+			<strong>Finding your innerHTML</strong>
+			Like form elements, divs have other interesting properties you can modify.
+			The innerHTML property allows you to change the HTML code displayed by
+			the div. You can put any valid HTML code you want inside the innerHTML
+			property, even HTML tags. Be sure that you still follow the HTML rules so
+			that your code will be valid. such as : <em>divOutput.innerHTML = "(strong>" + name + "(/strong>";</em>
+		</p>
+	</body>
+</html>

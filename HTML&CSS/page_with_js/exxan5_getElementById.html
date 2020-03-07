@@ -1,0 +1,48 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta content = "js" name="describes" />
+		<title>message-box</title>
+		<link rel="stylesheet" type="text/css" href="exam.css" />
+		<script type="text/javascript">
+			// change color background
+			function changeColor(color){
+				document.body.style.backgroundColor = color;
+			}
+			// from fisrt text box
+			function sayHi(){
+				//get infomation from form with DOM
+				//get address element by id
+				// a element is seem a object
+				var txtName = document.getElementById("txtInput");
+				var txtOutput = document.getElementById("txtOutput");
+				// get value
+				var name = txtName.value;
+				txtOutput.value = "Hi " + name + ", a good day!";
+			} // end sayhi
+		</script>
+		
+	</head>
+	<body>
+		<h1>text box input and output</h1>
+		<form action="">
+			<fieldset>
+				<h3>type yourname :</h3>
+				<input type="text" id="txtInput"/>
+				<input type="button" value="click me"
+						onclick="sayHi()"/>
+				<input type="text"  id="txtOutput"/>
+			</fieldset>
+			<fieldset>
+				<h3>changeBackgroundColor</h3>
+				<input type="button" value="blue"
+					onclick="changeColor('blue')"/>
+				<input type="button" value="white"
+					onclick="changeColor('white')"/>
+				
+				<input type="button" value="reset"
+					onclick="changeColor('#cccccc')"/>
+			</fieldset>
+		</form>
+	</body>
+</html>

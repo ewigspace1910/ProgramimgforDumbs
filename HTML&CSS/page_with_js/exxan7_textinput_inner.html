@@ -1,0 +1,129 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="hoc cai gi do" name="describes" />
+		<title>form and inner</title>
+		<style type="text/css">
+			/*set default style*/
+*{
+	margin : 0px;
+	padding : 0px;
+}
+body {
+	background-color : #cccccc;
+}
+h1, h3 {
+	text-align : center;
+} /* end set */
+form {
+	margin: 5px;
+	padding : 10px;
+	width : 50%;
+	
+	margin-left : auto;
+	margin-right : auto;
+}
+fieldset {
+	background-color : rgba(47, 56, 62, 0.8);
+}
+label {
+	width : 20%;
+	padding-left : 10px;
+	margin-bottom : 5px;
+	display : block;
+	/*make label to block-element than text */
+	position : relative;
+	left :5%;
+}
+input{
+	margin-bottom : 5px;
+	position : relative;
+	left : 25%;
+	display : block;
+}
+textarea {
+	margin-left : 12%;
+	margin-top : 15px;
+	margin-bottom : 5px;
+}
+button {
+	width : 20%;
+	height : 30px;
+	margin-left : 35%;
+	margin-top : 5px;
+	margin-bottom : 5px;
+	cursor : pointer;
+}
+#divOutput {
+	margin-left : auto;
+	margin-right : auto;
+	
+}
+		</style>
+		<script type="text/javascript">
+			// function do like name
+			function processForm(){
+				// get input
+				var acc= document.getElementById("txtacc");
+				var pwd= document.getElementById("pwd");
+				var hidden=document.getElementById("hidden");
+				var txtarea=document.getElementById("txtarea");
+				//get value;
+				var normal = acc.value;
+				var password = pwd.value;
+				var secret = hidden.value;
+				var bigtext=txtarea.value;
+				
+				//creat output'
+				// add string accort structure of  html
+				var result = "";
+				result += "<dl> \n";
+				result += "<hr><dt>nomal</dt> \n";
+				result += "	<dd>" + normal + "</dd> \n";
+				result += "	\n";
+				result += "<hr><dt>password</dt> \n";
+				result += "	<dd>" + password + "</dd> \n";
+				result += "	\n";
+				result += "<hr><dt>secret</dt> \n";
+				result += "	<dd>" + secret + "</dd> \n";
+				result += "	\n";
+				result += "<hr><dt>bigtext</dt> \n";
+				result += "	<dd>" + bigtext + "</dd> \n";
+				result += "</dl> \n";
+				// give output
+				var out = document.getElementById("divOutput");
+				out.innerHTML = result;
+				
+			}
+		</script>
+	</head>
+	<body>
+		<h1>text input devices</h1>
+		<form action="">
+			<fieldset>
+				<label>user</label>
+				<input type="text" id="txtacc" />
+				<label>password</label>
+				<input type="password" id="pwd" />
+				<label>hidden</label>
+				<input type="hidden" id="hidden" 
+					value="secret"/>
+				<textarea id="txtarea" cols="40" rows="15">
+					this is a big text area. IT can hold a lot of text.
+				</textarea>
+				<button type="button" onclick="processForm()">Click me</button>
+			</fieldset>
+		</form>
+		
+		<di>
+			<p>
+				affer click, you let read this paragarp.
+				press f12 to show code.
+				the new data list is auto generated.
+			</p>
+		</di>
+		<div id="divOutput">
+			<span>output ne</span>
+		</div>
+	</body>
+</html>

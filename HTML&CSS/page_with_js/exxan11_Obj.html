@@ -1,0 +1,51 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="array" name="describers" />
+		<link rel="stylesheet" href="exam.css" type="text/css" />
+		<title>object</title>
+		<script type="text/javascript">
+			//creat a Object
+			var obj = new Object();
+			// add some properties
+			obj.name = "Nula";
+			obj.age = 23;
+			//view properties
+			alert("name obj : " + obj.name + "," + obj.age + "years");
+			
+			//add method 
+			obj.talk = function (){
+				alert("this method of obj " + obj.name);
+			}
+			obj.talk();
+			
+			//creat a object with the contructor like function
+			// this is representation of js, not OOP, is function object
+			function Obj(name,age){
+				this.name =  name;
+				this.age = age;
+				// method
+				this.talk = function(){
+					alert("this method of obj " + this.name + this.age + " age ");
+				}
+			}
+			function main(){
+				var person1 = new Obj("dank", 19);
+				var person2 = new Obj("xixi",20);
+				person2.age = 19;
+				
+				person1.talk();
+				person2.talk();
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Creating Your Own Objects</h1>
+		<form action="" >
+			<fieldset>
+				<legend>get info to pass obj</legend>
+				<button type="button" onclick = "main()">start</button>
+			</fieldset>
+		</form>
+	</body>
+</html>

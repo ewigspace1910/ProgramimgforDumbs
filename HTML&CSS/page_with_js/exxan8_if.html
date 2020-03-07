@@ -1,0 +1,53 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="condition in js" name="describers" />
+		<title>JS</title>
+		<link rel="stylesheet" href="exam.css" type="text/css" />
+		<script type="text/javascript">
+			function checkNum(){
+				var txtnum = document.getElementById("txtNum");
+				var Num = parseInt(txtnum.value);
+				
+				if (Num > 0) {
+					alert(Num + " la so duong");
+				} else if(Num < 0) {
+					alert(Num + " la so am");
+				} else {
+					alert(Num + " la so khong");
+				}
+			}
+			function checkanswer(){
+				var answer = document.getElementById("txtAnswer");
+				var txt = answer.value;
+				switch (txt) {
+					case "Y" : alert("yes hum?");
+						break;
+					case "N" : alert("no!!!");
+						break;
+					default : alert("are you blind?");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form action="">
+			<fieldset>
+				<legend>if-else</legend>
+				<div class="container">
+					<input type="text" id="txtNum" />
+				</div>
+				<button type="button" onclick="checkNum()" >Click Me</button>
+			</fieldset>
+			<fieldset>
+				<legend>swicht</legend>
+				<div class="container">
+					<labe>press Y or N</labe>
+					<input type="text" id="txtAnswer" />
+				</div>
+				<button type="button" onclick="checkanswer()" >Click Me</button>
+			</fieldset>
+		</form>
+	</body>
+
+</html>

@@ -1,0 +1,55 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="array" name="describers" />
+		<link rel="stylesheet" href="exam.css" type="text/css" />
+		<title>array</title>
+		<script type="text/javascript">
+			function one(){
+				var arr = new Array (1,2,3,4,"five");
+				for (var i = 0; i< arr.length; i++){
+					alert("phan tu " + i + " = " + arr[i]);
+				}
+			}
+			//section 2
+			function getcity(){
+				var theCity = ""; //will hold the city number
+				var cityMenu = "Please choose a city by typing a number: \n";
+					cityMenu += "0) HomeTown \n";
+					cityMenu += "1) HaiPHong \n";
+					cityMenu += "2) Hue \n";
+					cityMenu += "3) HCM \n";
+				var city=prompt(cityMenu);
+				return city;
+			}
+			
+			function two(){
+				// distance between two city
+				var city = new Array("hometown","HaiPHong","Hue","HCM");
+				var distance = new Array (
+					new Array(0,10,100,1000),
+					new Array(10,0,100,1200),
+					new Array(100,100,0,500),
+					new Array(1000,1200,500,0)
+				);
+				var ctstart = parseInt(getcity());
+				var ctend = parseInt(getcity());
+				var messenger = "The distance between " + city[ctstart] + " and " + city[ctend] + " = ";
+					messenger += distance[ctstart][ctend] + "km";
+				alert(messenger);
+			}
+		</script>
+	</head>
+	<body>
+		<form action="" >
+			<fieldset>
+				<legend>one direction array ()</legend>
+				<button type="button" onclick = "one()">start</button>
+			</fieldset>
+			<fieldset>
+				<legend>two direction array((),())</legend>
+				<button type="button" onclick = "two()">start</button>
+			</fieldset>
+		</form>
+	</body>
+</html>

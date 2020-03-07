@@ -1,0 +1,146 @@
+<html lang="en-US" >
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="canvas" name="describes" />
+		<title>Canvas</title>
+		<script type="text/javascript" >
+			var canvas;
+			var con;
+			var output;
+			var pic;
+			W_Canvas = 500;
+			H_Canvas = 500;
+			
+			function init(){
+				canvas = document.getElementById("drawing");
+				con = canvas.getContext("2d");
+				output = document.getElementById("divOutput");
+				pic = document.getElementById("h1");
+				//make  loops for function
+				setInterval(draw,100); // 1 frame = 100/1000s delay, handle : draw-name no ()
+			
+				
+				//make event-handle function 
+				document.onkeydown = updateKeys;// onkeydown is attribute is a special property; 
+				
+			}
+			function clearCanvas(){
+				con.clearRect(0, 0, 500, 500);
+			}
+			function drawImg(){
+				// TRANSformation include :  translate, rotate, scale
+				// use a Coordinate System
+				con.save();// save old graphic system
+					con.translate(150, 150); //new position
+					con.rotate(Math.PI  / 3);
+					//con.scale(*x,*y);
+					con.drawImage(pic, 0, 0, 100, 100); // just draw Image before restore system;
+					
+					con.strokeStyle = "Red";
+					con.fillStyle = "black";
+					con.lineWidth = 3;
+					con.arc(0, 0, 15, 0, Math.PI * 2, true);
+					con.fill();
+				con.restore(); // close use a transformation techlyque
+			}
+			
+			// define updateKeys function
+			updateKeys = function(e){
+				var currentKey = e.keyCode; // get code of key press
+				output.innerHTML = "<p> key : " + currentKey + "</p>";
+			}
+			
+			// function animation 
+			var angel = Math.PI / 6;
+			var x = 0;
+			var y = 100;
+			var dx = 10;
+			var dy = 7;
+			function draw(){
+				// clear background
+				clearCanvas();
+				con.strokeStyle = "Red";
+				con.lineWidth = 3;
+				con.strokeRect(0, 0, 500, 500);
+				
+				//draw and change
+				angel += 0.25;
+				x += dx;
+				y += dy;
+				// you should check boundaries,
+				// if is game, let check key press
+				con.save();
+					con.translate(200, 200); 
+					con.rotate(angel);
+					con.drawImage(pic, 0, 0, 100, 100); // u can change 0 to x or y
+				con.restore();
+			}
+		</script>
+		<style type="text/css">
+			/*set default style*/
+			*{
+				margin : 0px;
+				padding : 0px;
+				box-sizing : border-box;
+			}
+			body {
+				background-color : #ffcecc;
+			}
+			} /* end set */
+			form {
+				margin: 5px;
+				padding : 10px;
+				width : 50%;
+				margin-left : auto;
+				margin-right : auto;
+			}
+			fieldset {
+				background-color : rgba(47, 56, 62, 0.8);
+				box-shadow : 3px 3px 10px 4px black;
+				animation : anime 5s 1s infinite ease alternate;
+				margin : 0 15px 15px 0;
+			}
+			legend {
+				font-size : 130%;
+			}
+
+			button {
+				display : inline-block;
+				width : 20%;
+				height : 30px;
+				margin-top : 5px;
+				margin-bottom : 5px;
+				cursor : pointer;
+			}
+			/* canvas */
+			canvas {
+				margin-left : 15px;
+				display : block;
+				margin-top : 10px;
+				border : 3px double black;
+				display : inline-block;
+				transition : .5s;
+			}
+			
+		</style>
+	</head >
+	<body onload="init()">
+		<h1>TranFORMATION & Animation</h1>
+		<form action="">
+			<button type="button"  onclick="clearCanvas()">Clear </button>
+			<fieldset>	
+				<legend>draw image transformation</legend>
+				<button type="button"  onclick="drawImg()">Draw edited image </button>
+			</fieldset>
+			<fieldset>	
+				<legend>draw Animation</legend>
+				<div id="divOutput"></div>
+			</fieldset>
+		</form>
+		<canvas id = "drawing" width = "500" height = "500">
+			<p>Your browser does not support the canvas tag...</p>
+		</canvas>
+		<img src="img/h1.jpeg" class="hidden"
+			width="300" height="300" alt="hinh 2"  id="h1"/>
+	</body>
+</html>

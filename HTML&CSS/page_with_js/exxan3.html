@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+ <head>
+	<title>flexTwoCol.html</title>
+	<meta charset = "UTF-8" />	
+	<meta content = "javascritp" name="descriper" />
+	<link rel="stylesheet" href="exam.css" type="text/css" />
+	<script type="text/javascript">
+		// Hello, world! , alert : warring dialog
+	</script>
+ </head>
+
+<body>
+	<script type="text/javascript">
+		document.bgColor = "#cccccc";
+	</script>
+	<h1>sort action for button in  javascritp</h1>
+	<form action="">
+		<fieldset>
+			<legend>change background-color</legend>
+			<input type="button" value="blue" 
+				onclick = "document.body.style.backgroundColor='blue' " />
+			<input type="button" value="white" 
+				onclick = "document.body.style.backgroundColor='white' " />
+			<input type="button" value="reset" 
+				onclick = "document.body.style.backgroundColor='#cccccc' " />
+			<input type="color" value="#ffffff" />
+		</fieldset>
+	</form>
+	<p>
+		first, browser read the first scirpt in body will change body immedicately. if u place it in head tag, this changence not.
+	</p>
+	<p>
+		second, Each button has a special attribute called onclick: The onclick attribute is an event handler. This is special because it allows you to
+		apply some sort of action to the button press. The action (a single line of JavaScript code) assigned to onclick will happen each time the button
+		is clicked.
+	</p>
+</body>
+</html>

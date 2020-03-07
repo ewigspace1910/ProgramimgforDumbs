@@ -1,0 +1,281 @@
+<html lang="en-US" >
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="canvas" name="describes" />
+		<title>Canvas</title>
+		<script type="text/javascript" >
+			var canvas;
+			function init(){
+				canvas = document.getElementById("drawing");
+			}
+			function changeBgColor(){
+				var color = document.getElementById("txtCol");
+				document.body.style.backgroundColor = color.value;
+				console.log("change Background Color to " + color.value);
+			}
+			// work with canvas
+			function draw(){
+				if (canvas.getContext){
+					var con = canvas.getContext('2d');
+					con.fillStyle = "red";
+					con.fillRect(0,0,150,50);/* paramete inclue x,y,width,height */
+				} // end if
+			} // end draw
+			function drawTwo(){
+				var con = drawing.getContext("2d");
+
+			//build a linear gradient
+				// define a linear gradient pattern
+				lGrad = con.createLinearGradient(0,0,100,200); // x1,y1, x2,y2 to indicate the start and end
+				lGrad.addColorStop(0, "red"); // parameter including "position" and "color"
+				lGrad.addColorStop(.5, "#00FF00");
+				lGrad.addColorStop(1, "black");
+				
+				con.fillStyle = lGrad;
+				con.fillRect(0, 0, 100, 200);
+			//build a radial gradient
+				rGrad = con.createRadialGradient(150, 100, 0, 150, 100, 100); // begin x, begin y, begin radius for center circle, endx, eny, end radius
+				rGrad.addColorStop(0, "#FF0000");
+				rGrad.addColorStop(.5, "#00FF00");
+				rGrad.addColorStop(1, "black");
+				
+				con.fillStyle = rGrad;
+				con.fillRect(100,0, 200, 200);
+			} // end draw
+			function drawThree(){
+				alert("Error 404!\n");
+				alert("u can draw stroke or fill text with tiles imagine");
+				alert("Steps pretty like fill gradient");
+			}
+			function clearcanvas(){
+				var con = canvas.getContext("2d");
+				con.clearRect(0, 0, 1000, 1000);
+			}
+			function drawStroke(){
+				var con = canvas.getContext("2d");
+				
+				con.fillStyle = "rgba(255,0,255,0.5)";
+				con.lineWidth = 5; // set width for line 
+				con.strokeRect(0, 0, 200, 200);
+			}
+			//draw text
+			function drawTxt(){
+				var txt= document.getElementById("txttext");
+				var content = canvas.getContext("2d");
+				//draw text
+				//content.font = "sans-serif";
+				//content.fontSize = "300";
+				content.fillStyle = "red";
+				content.fillText(txt.value, 5, 100); // TXTvalue, x, y 
+				content.strokeText(txt.value, 5, 130);
+			
+			}
+			function addShadow(){
+				var con = canvas.getContext("2d");
+				con.font = "120pt";
+				con.shadowOffsetX = 3;
+				con.shadowOffsetY = 3;
+				con.shadowColor  = "gray";
+				con.shadowBlur = 4; // can 0-5;
+				con.fillText("Hello!", 15, 100);
+			}
+			// work with Paths
+			// Paths include Some Lines to make picture
+			function drawTriangle(){
+				var con = canvas.getContext("2d");
+				con.strokeStyle = "Red";
+				con.fillStyle = "Blue";
+				con.lineWidth = 5;
+				
+				con.beginPath();
+					con.moveTo(100,100);
+					con.lineTo(190,100);
+					con.lineTo(100,150);
+					con.lineTo(100,100);
+				con.closePath();
+				
+				con.stroke();//When you define a path, it is not immediately displayed! The stroke()
+				con.fill();//command draws a line using the current stroke style and line width along the path. If you prefer, use the fill() command to draw a filledin shape defined by the path. If the path did not define a closed shape,
+						//the fill() command draws a line from the ending point to the beginning point. The fill() command fills in the path with the color, gradient, or pattern designated with fillStyle().
+				//Remember, the lineTo() method doesn’t actually draw a line! It simply
+				//indicates your path. The path is not visible until you execute a stroke(),closePath(), or fill() command.
+			
+			}
+			// drawing arcs and circle
+			function arcs(){
+				var con = canvas.getContext("2d");
+				
+				con.strokeStyle = "Blue";
+				con.fillStyle ="Red";
+				con.lineWidth = 4;
+				
+				//half-circle 
+				con.beginPath();
+					con.arc(220, 140, 50, 0, Math.PI, false); // I(200,140), R=50; 
+				con.closePath(); // false = clookwise
+				
+				con.fill();
+				con.stroke();
+			}
+			function circles(){
+				var con = canvas.getContext("2d");
+				con.strokeStyle = "Gray";
+				con.lineWidth = 3;
+				con.fillStyle = "Yellow";
+				//full circle filled
+				con.beginPath();
+					con.arc(220, 220, 50, 0, Math.PI*2, true); // begin = 0rad , end= Math.pi*2 -> 1 vong
+				con.closePath(); // true = counter-clock
+				
+				con.fill();
+			}
+			// draw curves
+			// using drawDot 
+			function drawDot(x, y, color){
+				var con = canvas.getContext("2d");
+				con.fillStyle = color;
+				con.beginPath();
+					con.arc(x, y, 10, 0, 2 * Math.PI, true);
+				con.fill();
+				con.closePath();
+			} // end drawDot
+			
+			function curvesPoint(){
+				var con = canvas.getContext("2d");
+				con.strokeStyle = "green";
+				con.lineWidth = 4;
+				
+				//draw 
+				con.beginPath();
+					con.moveTo(300, 0);
+					con.quadraticCurveTo(100, 10, 0, 250);
+					con.stroke();
+				con.closePath();
+				
+				// drawDot
+				drawDot(300,0,"Gray");
+				drawDot(0,250,"Gray");
+				drawDot(100,10,"Black");
+			}
+			function curvesTwoPoint(){
+				//this is bezier
+				var  con = canvas.getContext("2d");
+				con.strokeStyle = "black";
+				con.lineWidth = "5";
+				
+				con.beginPath();
+					con.moveTo(10,10); // fisrt point
+					con.bezierCurveTo(100, 10, 100, 190, 190, 190); // 2nd, 3th, last point
+				con.stroke();
+				con.closePath();
+				//mark beginning and end with blue
+				drawDot(10, 10, "blue");
+				drawDot(190, 190, "blue");
+				//mark control points with red
+				drawDot(100, 10, "red");
+				drawDot(100, 190, "red");
+			} // end draw	
+		</script>
+		<style type="text/css">
+			/*set default style*/
+			*{
+				margin : 0px;
+				padding : 0px;
+				box-sizing : border-box;
+			}
+			body {
+				background-color : #cccccc;
+			}
+			} /* end set */
+			form {
+				margin: 5px;
+				padding : 10px;
+				width : 50%;
+				margin-left : auto;
+				margin-right : auto;
+			}
+			fieldset {
+				background-color : rgba(47, 56, 62, 0.8);
+				box-shadow : 3px 3px 10px 4px black;
+				animation : anime 5s 1s infinite ease alternate;
+			}
+			legend {
+				background-color : white;
+				font-size : 130%;
+			}
+
+			button {
+				display : inline-block;
+				width : 20%;
+				height : 30px;
+				margin-top : 5px;
+				margin-bottom : 5px;
+				cursor : pointer;
+			}
+
+			/* funny */
+			@keyframes anime {
+				0% {box-shadow : 3px 3px 10px 4px black;}
+				10% {box-shadow : 3px 3px 10px 4px rgb(255,128,0);}
+				20% {box-shadow : 3px 3px 10px 4px rgb(128, 128, 255);}
+				30% {box-shadow : 3px 3px 10px 4px rgb(255, 255, 128);}
+				40% {box-shadow : 3px 3px 10px 4px rgb(128, 255, 192);}
+				50% {box-shadow : 3px 3px 10px 4px red;}
+				60% {box-shadow : 3px 3px 10px 4px rgb(128, 255, 128);}
+				70% {box-shadow : 3px 3px 10px 4px rgb(5, 26, 207);}
+				80% {box-shadow : 3px 3px 10px 4px rgb(128, 255, 128);}
+				90% {box-shadow : 3px 3px 10px 4px white;}
+				100% {box-shadow : 3px 3px 10px 4px black;}
+			}
+			/* canvas */
+			canvas {
+				margin-left : auto;
+				margin-right : auto;
+				display : block;
+				margin-top : 10px;
+				animation : anime 5s 1s infinite ease alternate;
+
+			}
+			
+		</style>
+	</head >
+	<body onload="init()">
+		<form action="">
+			<fieldset>
+				<legend>Change BG-Color</legend>
+				<input type="color" id="txtCol" value="#cccccc" onchange="changeBgColor()" />
+			</fieldset>
+			<fieldset>
+				<legend>control canvas</legend>
+				<label>fill and stroke</label><div>
+					<button type="button" onclick ="draw()">draw Retangle</button>
+					<button type="button" onclick ="drawStroke()">Draw Stroke Retangle</button>
+					<button type="button" onclick ="drawTwo()">fill gradient</button>
+					<button type="button" onclick ="drawThree()">fill pattern</button>
+				</div><label>other feature</label><div>	
+					<button type="button" onclick="clearcanvas()">Reset</button>
+				</div><label>draw text</label><div>	
+					<input type="text" maxlength="5" id="txttext" />
+					<button type="button" onclick="drawTxt()">Draw Text</button>
+					<button type="button" onclick="addShadow()">Add shadow</button>
+				</div><label>draw with Paths</label><div>	
+					<button type="button" onclick="drawTriangle()">Draw Triangle</button>
+					
+				</div><label>draw arcs and circle</label><div>	
+					<p>Arcs and circles are part of the path mechanism</p>
+					<button type="button" onclick="arcs()">half-circle</button>
+					<button type="button" onclick="circles()">circle</button>
+				</div><label>draw quadratic curves</label><div>	
+					<button type="button" onclick="curvesPoint()"> control point</button>
+					<button type="button" onclick="curvesTwoPoint()"> control two point</button>
+				</div>
+				
+			</fieldset>
+			
+		</form>
+		<canvas id = "drawing" width = "300" height = "300">
+			<p>Your browser does not support the canvas tag...</p>
+		</canvas>
+		
+	</body>
+</html>

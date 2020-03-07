@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+ <head>
+	<title>flexTwoCol.html</title>
+	<meta charset = "UTF-8" />	
+	<meta content = "javascritp" name="descriper" />
+	<link rel="stylesheet" href="exam.css" type="text/css" />
+	<script type="text/javascript">
+		// from backgroundColor
+		function changeColor(color){
+			document.body.style.backgroundColor = color;
+		}
+	</script>
+ </head>
+
+<body>
+	<script type="text/javascript">
+		document.bgColor = "#cccccc";
+	</script>
+	<h1>sort action for button in  javascritp</h1>
+	<form action="">
+		<fieldset>
+			<legend>change background-color</legend>
+			
+			<input type="button" value="blue" 
+				onclick = "changeColor('blue')" />
+			<input type="button" value="white" 
+				onclick = "changeColor('white')" />
+			<input type="button" value="reset" 
+				onclick = "changeColor('#cccccc')" />
+			
+			<input type="color" value="#ffffff" />
+		</fieldset>
+	</form>
+	<p>
+		first, browser read the first scirpt in body will change body immedicately. if u place it in head tag, this changence not.
+	</p>
+	<p>
+		second, Each button has a special attribute called onclick: The onclick attribute is an event handler. This is special because it allows you to
+		apply some sort of action to the button press. The action (a single line of JavaScript code) assigned to onclick will happen each time the button
+		is clicked.
+	</p>
+	<p>
+		The term color inside the parentheses is called a parameter. A parameter is a value sent to a function. Inside the function, color is available as a variable. When you call a function, you can send a value to it, like this: changeColor('white');
+		This sends the text value ‘white’ to the function, where it becomes the value of the color variable.
+		You’ll sometimes see the terms argument and parameter used interchangeably to reference the stuff passed to a function, but these terms
+		are not exactly the same. Technically, the parameter is the variable name (color) and the argument is the value of that variable (‘white’).
+		You can design a function with as many parameters as you wish, but you
+		need to name each one. After a function is designed with parameters,
+		you must supply an argument for each parameter when you call the function.
+	</p>
+	<p>
+		onclick is an HTML parameter, and its value must be encased in quotes.The parameter happens to be a function call, which sends a string value.
+		String values must also be in quotes. This setup can become confusing if you use double quotes everywhere because the browser has no way to know thequotes are nested. Look at this incorrect line of code: <strong>onclick = "changeColor("white")" /></strong>
+		HTML thinks the onclick parameter contains the value <em>"changeColor(" </em>and it will have no idea what white")" is.
+		Fortunately, JavaScript has an easy fix for this problem. If you want to embed a quote inside another quote, just switch to single quotes. The line is written with the parameter inside single quotes:<em>onclick = "changeColor('white')" /> </em>
+	</p>
+</body>
+</html>

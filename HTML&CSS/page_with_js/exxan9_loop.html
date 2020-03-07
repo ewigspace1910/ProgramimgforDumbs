@@ -1,0 +1,90 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="condition in js" name="describers" />
+		<title>JS</title>
+		<link rel="stylesheet" href="exam.css" type="text/css" />
+		<script type="text/javascript">
+			// creat a global variable(bien toan cuc)
+			var output;
+			function init(){
+			// function will be laod when page formating
+				output = document.getElementById("divOutput");
+			//You can create the output variable without being in a function, but you
+			//can’t attach it to the actual div in the web page until the web page has finished forming 
+			}
+			
+			function countNum(){
+				var txtnum = document.getElementById("NUM");
+				var num = txtnum.value;
+				var txtout = document.getElementById("divOutput");
+				var out = txtout.value;
+				out = "<p> \n ";
+				for (var i=1; i <= num ; i++){
+					out += i + " ";  
+				}
+				out += "\n </p> ";
+
+				txtout.innerHTML = out;
+			}
+			function backNum(){
+				var num = document.getElementById("NUM");
+				output.innerHTML = "";
+				for (var i=num.value; i>0; i -= 2){
+					output.innerHTML += "<p>" + i + "</p>";
+				}
+			}
+			function whileNum(){
+				var num = document.getElementById("NUM");
+				var Number = num.value;
+				while (Number > 0){
+					alert("num = " + Number);
+					Number = Number - 5;
+				}
+			}
+			function threeTries(){
+				//continues until user is correct or has three
+				//incorrect guesses
+				var correct = "HTML5";
+				var guess = "";
+				var keepGoing = true;
+				var tries = 0;
+				while (keepGoing){
+					guess = prompt("Password?");
+					if (guess == correct){
+						alert("You may proceed");
+						keepGoing = false;
+					} else {
+						tries++;
+						if (tries >= 3){
+						alert("Too many tries. Launching missiles...");
+						keepGoing = false;
+						}// end if
+					} // end if
+				} // end while
+			} // end threetries
+		</script>
+	</head>
+	<body onload="init()">
+		<form action="">
+			<fieldset>
+				<legend>LOOP</legend>
+				<input type="number"  value="15" id="NUM" />
+				<button type="button" onclick="countNum()"> count</button>
+				<button type="button" onclick="backNum()"> count backwards</button>
+				<button type="button" onclick="whileNum()">dont click</button>
+				<button type="button" onclick="threeTries()">check pass:></button></button>
+			</fieldset>
+		</form>
+		<p>
+			this page has some function.
+			onload=init() :  initialization function, to refresh page like the fisrt <br/>
+			cout() : cout num from one to num use ForLoop<br/>
+			back() : cout nnum from NUM downto one use WhileLoop <br/>
+		</p>
+		<div id="divOutput">
+			<p>output</p>
+		</div>
+	</body>
+
+</html>

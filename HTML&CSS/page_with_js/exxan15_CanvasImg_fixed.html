@@ -1,0 +1,72 @@
+<!DOCTYPE html>  
+<html>  
+<head lang="en">  
+    <meta charset="UTF-8">  
+    <title>Char Picture</title>   
+    <script>
+ 
+		function Adjust(context, width, height) {   
+				imgData = context.getImageData(0, 0, width, height);
+				// adjust list Pixels, representation for Image
+				for (var row = 0; row < height ; row++){
+					for(var col = 0; col < width; col++){
+						var index = (col + row * height) * 4;
+						
+						//dataImage is array int
+						var r = imgData.data[index];	// red
+						var g = imgData.data[index + 1];	// green
+						var b = imgData.data[index + 2]; //blue
+						var a = imgData.data[index + 3]; // anpha
+						//manipulate color values
+						r += 25;
+						g -= 50;
+						b += 35;
+						a += 0;
+						
+						if(r > 255){ r = 255;}
+						if(r > 255){ r = 0;}
+						if(g > 255){ g = 255;}
+						if(g < 0){ g = 0;}
+						if(b > 255){ b = 255;}
+						if( b< 0){ b = 0;}
+						
+						imgData.data[index] = r;
+						imgData.data[index + 1] = g;
+						imgData.data[index + 2] = b;
+						imgData.data[index + 3] = a;
+					}
+				}
+				context.putImageData(imgData, 0, 0); // insert data from row-col
+			}
+	</script> 
+</head>  
+<body>  
+	<input type="file" id="file"/>
+	<button type="button" onclick="showImage()">Tạo</button><br>  
+	<canvas id="show"></canvas>
+	<img src="" style="width: 100px"/> 
+<script>  
+    var 	show=document.getElementById("show"),  
+            img=document.getElementsByTagName("img")[0], 
+			//img = new Image(), 
+            canvas = document.getElementById("show");  
+	 function showImage(){  
+        var file = document.getElementById('file').files[0],  
+                ctx = canvas.getContext('2d'),  
+                url = URL.createObjectURL(file);  
+ 		if(!file){  
+            alert("Vui lòng chọn tệp tin");  
+        }
+        //img.src = "img/h1.jpeg";  
+		img.src = url;
+        img.onload=function(){  
+            canvas.width=img.naturalWidth;  
+            canvas.height=img.naturalHeight;  
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);  
+			Adjust(ctx, canvas.width, canvas.height);
+            //show.innerText=toChars(ctx,canvas.width,canvas.height,100);  
+        }  
+    }  
+</script>  
+</body>  
+</html>

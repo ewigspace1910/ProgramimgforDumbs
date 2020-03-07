@@ -1,0 +1,164 @@
+<html lang="en-US" >
+	<head>
+		<meta charset="UTF-8" />
+		<meta content="canvas" name="describes" />
+		<title>Canvas</title>
+		<script type="text/javascript" >
+			var canvas;
+			function init(){
+				canvas = document.getElementById("drawing");
+			}
+			function drawImg(){
+				var con = canvas.getContext("2d");
+				var pic = document.getElementById("goofyPic");
+				
+				con.drawImage(pic, 0, 0, 300, 200); // parameter : Obj name, x,y,width,height
+				
+				var newpic = new Image(); // creat a image object
+				newpic.src = "img/h1.jpg"; // scr properties assign to obj
+				con.drawImage(newpic, 0, 200, 100, 50);
+			}
+			function clearCan(){
+				var con = canvas.getContext("2d");
+				con.clearRect(0, 0, 1000, 1000);
+			}
+			function drawPart(){
+				var con = canvas.getContext("2d");
+				var pic = document.getElementById("goofyPic");
+				
+				con.drawImage(pic, 500, 500, 500, 500, 50, 50, 300, 300); 
+				// parameter : Obj name, (x,y) of source ,(width,height) of source, x,y, w-h
+			}
+			function AdjustImg(){
+				var con = canvas.getContext("2d");
+				var pic = new Image();
+					pic.src = "img/h1.jpeg";
+				var Pic_Width = pic.width;
+				var Pic_Height = pic.height;
+				
+				//draw the original on the canvas
+				con.drawImage(pic, 0, 0);
+				//get the image data , this is array
+				imgData = con.getImageData(0, 0, Pic_Width, Pic_Height);
+				
+				// adjust list Pixels, representation for Image
+				for (var row = 0; row < Pic_Height ; row++){
+					for(var col = 0; col < Pic_Width; col++){
+						var index = (col + row*Pic_Width)*4;
+						
+						//dataImage is array int
+						var r = imgData.data[index];	// red
+						var g = imgData.data[index + 1];	// green
+						var b = imgData.data[index + 2]; //blue
+						var a = imgData.data[index + 3]; // anpha
+						//manipulate color values
+						r += 50;
+						g -= 50;
+						b += 50;
+						a += 0;
+						
+						if(r>255){ r=255}
+						if(r>255){ r=0}
+						if(g>255){ g=255}
+						if(g<0){ g=0}
+						if(b>255){ b=255}
+						if(b<0){ b=0}
+						
+						imgData.data[index] = r;
+						imgData.data[index + 1] = g;
+						imgData.data[index + 2] = b;
+						imgData.data[index + 3] = a;
+					}
+				}
+				con.putImageData(imgData, 0, 0);
+			}
+		</script>
+		<style type="text/css">
+			/*set default style*/
+			*{
+				margin : 0px;
+				padding : 0px;
+				box-sizing : border-box;
+			}
+			body {
+				background-color : #ffcecc;
+			}
+			} /* end set */
+			form {
+				margin: 5px;
+				padding : 10px;
+				width : 50%;
+				margin-left : auto;
+				margin-right : auto;
+			}
+			fieldset {
+				background-color : rgba(47, 56, 62, 0.8);
+				box-shadow : 3px 3px 10px 4px black;
+				animation : anime 5s 1s infinite ease alternate;
+				margin : 0 15px 15px 0;
+			}
+			legend {
+				background-color : white;
+				font-size : 130%;
+			}
+
+			button {
+				display : inline-block;
+				width : 20%;
+				height : 30px;
+				margin-top : 5px;
+				margin-bottom : 5px;
+				cursor : pointer;
+			}
+
+			/* funny */
+			@keyframes anime {
+				0% {box-shadow : 3px 3px 10px 4px black;}
+				10% {box-shadow : 3px 3px 10px 4px rgb(255,128,0);}
+				20% {box-shadow : 3px 3px 10px 4px rgb(128, 128, 255);}
+				30% {box-shadow : 3px 3px 10px 4px rgb(255, 255, 128);}
+				40% {box-shadow : 3px 3px 10px 4px rgb(128, 255, 192);}
+				50% {box-shadow : 3px 3px 10px 4px red;}
+				60% {box-shadow : 3px 3px 10px 4px rgb(128, 255, 128);}
+				70% {box-shadow : 3px 3px 10px 4px rgb(5, 26, 207);}
+				80% {box-shadow : 3px 3px 10px 4px rgb(128, 255, 128);}
+				90% {box-shadow : 3px 3px 10px 4px white;}
+				100% {box-shadow : 3px 3px 10px 4px black;}
+			}
+			/* canvas */
+			canvas {
+				margin-left : 15px;
+				display : block;
+				margin-top : 10px;
+				animation : anime 5s 1s infinite ease alternate;
+				display : inline-block;
+				transition : .5s;
+			}
+			
+		</style>
+	</head >
+	<body onload="init()">
+		<h1>Drawing an image on the canvas</h1>
+		<form action="">
+			<fieldset>
+				<legend>draw image</legend>
+				<button type="button"  onclick="drawImg()">Draw Img</button>
+				<button type="button" onclick="drawPart()">Draw Part</button>
+				<button type="button" onclick="clearCan()">Clear Pic</button>
+			</fieldset>
+			<fieldset>
+				<legend>Manipulating Pixels</legend>
+				<button type="button"  onclick="AdjustImg()">Auto fix</button>
+			
+			</fieldset>
+		
+		</form>
+		<img src="img/h1.jpg" id="goofyPic" class="hidden"
+			width="500" height="300" alt="hinh 1" />
+		<canvas id = "drawing" width = "500" height = "300">
+			<p>Your browser does not support the canvas tag...</p>
+		</canvas>
+		<img src="img/h1.jpeg" class="hidden"
+			width="300" height="300" alt="hinh 2" />
+	</body>
+</html>
