@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>styleElements.html</title>
+	<meta charset="UTF-8">
+	<script type = "text/javascript" src = "jquery-1.10.2.min.js"></script>
+	<script type = "text/javascript">
+		//As you’re beginning to see, most jQuery applications require some sort of initialization. I normally call the first function init().
+		$(init); //The init() method simply sets up an event handler
+		function init(){
+			$("li").hover(border, noBorder); // make  all list items and attaches the hover event to them
+			// The hover() function accepts two parameters(s a function to be called when the cursor hovers andwhen the cursor leaves)
+		
+			$("li").click(toggleBorder);
+			// jQueryevents another 
+			// change(about content) - click - dbclick - focus - keydown - hover - mousseDown- select(text-style)
+		}
+		// add css when cursor 
+		function border(){
+			$(this).css("border", "1px solid black"); // The $(this) identifier is used to specify the current object
+		}
+		function noBorder(){
+		//but it removes a border from the current object
+			$(this).css("border", "0px none black");
+		}
+		
+		function toggleBorder(){
+			$(this).toggleClass("bordered");
+			// other method for manipulating the class : addClass - removeClass()- toggleClass()
+		}
+		
+		
+	</script>
+	<style>
+		.bordered {
+			background-color : #cccccc;
+		}
+	</style>
+</head>
+<body>
+	<h1>Hover Demo</h1>
+	<ul>
+		<li>alpha</li>
+		<li>beta</li>
+		<li>gamma</li>
+		<li>delta</li>
+	</ul>
+	<pre>In this example, I used three different functions. Many jQuery programmers prefer to use anonymous functions (sometimes called lambda functions) to enclose the entire functionality in one long line:
+		$("li").hover(
+		 function(){
+		 $(this).css("border", "1px solid black");
+		 },
+		 function(){
+		 $(this).css("border", "0px none black");
+		 }
+		 );
+	</pre>
+	<hr />
+	<h1>create class with toggleClass</h1>
+	
+</body>
+</html>

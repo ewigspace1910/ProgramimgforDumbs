@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en";>
+<head>
+	<meta charset="UTF-8">
+	<title>basicAJAX.html</title>
+	<script type = "text/javascript">
+		function getAJAX(){
+		var request = new XMLHttpRequest();
+		request.open("GET", "beast.txt", false); // open(protocol, URL, synchronization [true or false])
+		request.send(null);
+		
+		if (request.status == 200){
+			//we got a response
+			alert(request.responseText);
+		} else {
+			//something went wrong
+			alert("Error- " + request.status + ": " + request.statusText);
+		} // end if
+		} // end function
+	</script>
+</head>
+<body>
+	<h1>Basic AJAX</h1>
+	<form action = "">
+	 <p>
+	 <button type = "button" onclick = "getAJAX()"> Click me! </button>
+	 </p>
+	</form>
+</body>
+</html>

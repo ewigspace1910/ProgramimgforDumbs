@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang = "en-US"> 
+<head>
+  <title>hideShow.html</title>
+  <meta charset = "UTF-8">
+  <style type = "text/css">
+  #content {
+    width: 400px;
+    height: 200px;
+    font-size: 200%;
+    padding-left:1em;
+    background-color: yellow;
+    position: absolute;
+    left: 300px;
+    top: 100px;
+  }
+  h2 {
+    width: 10em;
+    border: 3px outset black;
+    background-color: lightgray;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gray;
+	cursor : pointer;
+  }
+  </style>
+  <script type = "text/javascript"
+          src = "jquery-1.10.2.min.js"></script>
+  <script type = "text/javascript">
+    $(init);
+    function init(){
+      //styleContent();
+      $("#content").hide();
+	  //Attach event handlers to each H2 button. assign EH to Jquery note object
+      $("#show").click(showContent);
+      $("#hide").click(hideContent);
+      $("#toggle").click(toggleContent);
+      $("#slideDown").click(slideDown);
+      $("#slideUp").click(slideUp);
+      $("#fadeIn").click(fadeIn);
+      $("#fadeOut").click(fadeOut);
+    } // end init
+    function showContent(){
+      $("#content").show(1000); // 1000 is parameter for speed
+    } // end showContent
+    function hideContent(){
+      $("#content").hide();
+    } // end hideContent
+    function toggleContent(){
+      $("#content").toggle();
+	  //$("#content").slidetoggle() like toggle but using sliding action
+    }
+   
+
+   function slideDown(){
+      $("#content").slideDown("medium");
+    } // end slideDown
+    function slideUp(){
+      $("#content").slideUp(500);
+    } // end slideUp
+	
+	
+    function fadeIn(){
+      $("#content").fadeIn("slow", present);
+    } // end fadeIn
+    function fadeOut(){
+      $("#content").fadeOut("fast");
+    } // end fadeOut.
+    function present(){
+      alert("I'm here");
+    } // end present
+	// If you supply the fadeIn() method (or indeed any of the animation methods described in this section) with a function name as a second parameter, that function is
+	//called upon completion of the animation
+	//A function used in this way is a "callback function"
+  </script>
+</head>
+<body>
+  <h1>Hide and show</h1>
+  <h2 id = "show">Show</h2>
+  <h2 id = "hide">Hide</h2>
+  <h2 id = "toggle">Toggle</h2>
+  <h2 id = "slideDown">Slide Down</h2>
+  <h2 id = "slideUp">Slide Up</h2>
+  <h2 id = "fadeIn">Fade In</h2>
+  <h2 id = "fadeOut">Fade Out</h2>
+  <p id = "content">
+    This is the content. It is hidden at first, but it is hidden and
+    shown with jQuery techniques.
+  </p>
+</body>
+</html>

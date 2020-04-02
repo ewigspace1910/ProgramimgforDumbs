@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+ <title>AJAXTest.html</title>
+ <meta charset= "UTF-8" />
+ <script type = "text/javascript" src = "jquery-1.10.2.min.js"></script>
+ <script type = "text/javascript">
+	 $(init);
+	function init(){
+		$.get("simpleGreet.php", { "userName": "Andy" }, processResult);
+	}
+	function processResult(data, textStatus){	
+		$("#output").html(data);
+		$("#error").html(textStatus);
+	}
+</script>
+</head>
+<body>
+<h1>AJAX Test</h1>
+<div id = "output">
+	This is the default output
+</div>
+<div id = "error">
+	This is the default error
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>styleElements.html</title>
+	<meta charset="UTF-8">
+	<script type = "text/javascript" src = "jquery-1.10.2.min.js"></script>
+	<script type = "text/javascript">
+		$(init);
+		function init(){
+			$("h1").css("backgroundColor", "yellow"); // method takes two parameters: a style rule and value.
+			$("#myParagraph").css({"backgroundColor":"black", "color":"white"}); //A more powerful variation of the style rule exists that allows you to applyseveral CSS styles at once
+			$(".bordered").css("border", "1px solid black");
+		}
+	</script>
+</head>
+<body>
+	<h1>I'm a level one heading</h1>
+	<p id = "myParagraph"> I'm a paragraph with the id "myParagraph." </p>
+	<h2 class = "bordered"> I have a border. </h2>
+	<p class = "bordered"> I have a border too. </p>
+</body>
+</html>

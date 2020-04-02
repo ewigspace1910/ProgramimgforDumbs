@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang = "en-US"> 
+
+<head>
+  <title>Animate.html</title>
+  <meta charset = "UTF-8">
+  <style type = "text/css">
+	fieldset{
+		width : 50%;
+		margin : 0 auto 0 auto;
+	}
+	#content {
+		width: 700px;
+		height: 600px;
+		font-size: 200%;
+		background-color: yellow;
+		position: absolute;
+		left: 300px;
+		top: 100px;
+		padding-left: .5em;
+		overflow : auto;
+		}
+  </style>
+  <script type = "text/javascript"
+          src = "jquery-1.10.2.min.js"></script>
+  <script type = "text/javascript">
+    $(init);
+    function init(){
+      $("#move").click(move2);
+      $("#glide").click(glide);
+      $("#left").click(left);
+      $("#right").click(right);
+    } // end init
+
+    function move2(){
+      $("#content").css("left", "150px");
+      $("#content").css("top", "100px");
+	  //it has a subtle problem. It moves the element in two separate steps.
+    } // end move2
+    function move(){
+      $("#content").css("left", "50px").css("top", "100px");
+	  // jQuery supports a really neat feature called ["node chaining"] that allows you to combine many jQuery steps into a single line.
+    } // end move
+	
+    function glide(){
+      //move to initial spot
+      $("#content").css("left", "50px");
+	  //.css("top", "100px"); u can write chaining note by 2line as long as last line has semilo ';'
+      //slide to new spot
+      $("#content").animate({
+			"left": "400px",
+			"top": "200px"
+		}, 2000);
+    } // end glide
+
+    function left(){
+      $("#content").animate({"left": "-=100px"}, 1000); //  other attribute  : easing, swing, linear,...
+    } // end left
+    function right(){
+      $("#content").animate({"left": "+=100px"}, 500);
+    } // end left
+  </script>
+</head>
+<body style="background-color : #cccccc;">
+<h1>Animation Demo</h1>
+<form action = "">
+  <fieldset>
+    <button type = "button"
+            id = "move">
+      move
+    </button>
+    <button type = "button"
+            id = "glide">
+      glide 
+    </button>
+    <button type = "button"
+            id = "left">
+       &lt;--
+     </button>
+     <button type = "button"
+             id = "right">
+       -->
+     </button>
+  </fieldset>
+</form>
+<p id = "content">
+  It also illustrates an important jQuery technique called object chaining and
+a very useful animation method that allows you to create smooth motion
+over time.<br/>
+Almost all jQuery methods return a jQuery object as a side effect. So, the line <i>$("#content").text("changed");</i>
+not only changes the text of the content node but also makes a new node.You can attach that node to a variable like this if you want:
+ <em>var newNode = $("#content").text("changed");</em><br/>
+
+However, what most jQuery programmers do is simply attach new functionality onto the end of the previously defined node, like this:
+<br/><strong> $("#content").text("changed").click(hiThere);</strong><br/>
+This new line takes the node created by $(“#content”) and changes its text value. It then takes this new node (the one with changed text) and adds
+a click event to it, calling the hiThere() function when the content element is clicked. In this way, you build an ever-more complex node by chaining nodes on top of each other.
+</p>
+<p>Using the css() method is a great way to move an element around on the screen, but the motion is instantaneous. jQuery supports a powerful method
+called animate() that allows you to change any DOM characteristics over a specified span of time. The glide button on animate.html smoothly moves
+the content div from (50, 100) to (400, 200) over two seconds</p>
+<ul>
+	<li><strong>A JSON object describing attributes to animate</strong>
+		<p>The first parameter is an object in JSON notation describing name/value attribute pairs</p>
+		<p>Instead of a numerical value, you can use “hide,” “show,” or “toggle” to specify an action</p>
+	</li>
+	<li>A speed attribute</li>
+	<li>a callback function</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+ "Lucy": { 
+	"animal": "Cat",
+	"breed": "American Shorthair",
+	"note": "She raised me"
+	},
+ 
+ "Homer": { 
+	"animal": "Cat",
+	"breed": "unknown",
+	"note": "Named after a world-famous bassoonist"
+	},
+ 
+ "Jonas": { 
+	"animal": "Dog",
+	"breed": "Cairn Terrier",
+	"note": "The dog that currently owns me"
+	}
+}

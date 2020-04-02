@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang = "en-US"> 
+
+<head>
+  <title>changeContent.html</title>
+  <meta charset = "UTF-8">
+  <style type = "text/css">
+  #content {
+    width: 300px;
+    background-color: yellow;
+    left: 300px;
+    top: 100px;
+    padding-left: .5em;
+    border: 0px none black;
+  }
+  div {
+    border: 3px solid red;
+    padding: 2px;
+  }
+  </style>
+  <script type = "text/javascript"
+          src = "jquery-1.10.2.min.js"></script>
+  <script type = "text/javascript">
+    $(init);
+    
+    function init(){
+      $("#reset").click(reset);
+      $("#addText").click(addText);
+      $("#wrap").click(wrap);
+      $("#clone").click(clone);
+      $("#oddGreen").click(oddGreen);
+    } // end init
+    
+    function reset(){
+      //remove all but the original content
+      $("p:gt(0)").remove();
+      $("div:not(#content)").remove();
+      //reset the text of the original content
+      $("#content").html("<p>This is the original content</p>");
+    } // end reset
+    
+    function addText(){
+      $("p:first").append(" ...and this was added later.");
+    } // end addContent
+    
+    function wrap(){
+      $("p:gt(0)").wrap("<div></div>");
+    } // end wrap
+    
+    function clone(){
+     $("p:first").clone()
+     .insertAfter("p:last")
+     .css("backgroundColor", "lightblue");
+    } // end clone
+    
+    function oddGreen(){
+      //turn alternate (odd numbered) paragraph elements green
+      $("p:odd").css("backgroundColor", "green")
+      .css("color", "white");
+    } // end oddGreen
+  </script>
+</head>
+<body>
+  <h1>Adding Content Demo</h1>
+  <form action = "">
+    <fieldset>
+      <button type = "button"
+              id = "reset">
+        reset
+      </button>
+      <button type = "button"
+              id = "addText">
+        add text
+      </button>
+      <button type = "button"
+              id = "clone">
+        clone
+      </button>
+      <button type = "button"
+              id = "wrap">
+        wrap in div
+      </button>
+      <button type = "button"
+              id = "oddGreen">
+        change alternate paragraphs
+      </button>
+    </fieldset>
+  </form>
+  <div id = "content">
+    <p>
+      This is the original content
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax.html</title>
+	<script type = "text/javascript" src = "jquery-1.10.2.min.js"></script>
+	<script type = "text/javascript">
+		$(document).ready(getAJAX);
+		function getAJAX(){
+			$("#output").load("hello.txt");
+		}
+	</script>
+</head>
+<body>
+	<div id = "output"></div>
+	<p>The load() mechanism described here is suitable for a basic situation
+where you want to load a plain-text or HTML code snippet into your pages.
+You read about much more sophisticated AJAX techniques in Chapter 6 of
+this minibook.</p>
+</body>
+</html>

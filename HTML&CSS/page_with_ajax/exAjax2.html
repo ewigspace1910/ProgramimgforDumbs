@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+	<meta charset = "UTF-8" />
+	<script type = "text/javascript" src = "jquery-1.10.2.min.js"></script>
+	<script type = "text/javascript">
+		$(init);
+		function init(){
+			// access the data
+			$.get("pets.xml", processResult);
+			// this program will be expecting XML data, so I should be calling an XML file or a program that produces XML output.
+		} // end init
+		
+		//The processResult() function accepts two parameters: data and textStatus
+		function processResult(data, textStatus){
+			//clear the output
+			$("#output").html("");
+			//find the pet nodes...
+			$(data).find("pet").each(printPetName);
+		} // end processResult
+		
+		//Within the function, the $(this) element refers to the current element as a jQuery node
+		function printPetName(){
+			//isolate the name text of the current node
+			thePet = $(this).find("name").text();
+			//add list item elements around it
+			thePet = "<li>" + thePet + "<\/li>";
+			//add item to the list
+			$("#output").append(thePet);
+		} // end printPetName
+
+	</script>
+	<title>readXML.html</title>
+</head>
+<body>
+	<h1>Reading XML</h1>
+	<ul id = "output">
+		<li>This is the default output</li>
+	</ul>
+</body>
+</html>

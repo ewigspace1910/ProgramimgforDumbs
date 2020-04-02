@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+	<title>change.html</title>
+	<script type = "text/javascript" src = "jquery-1.10.2.min.js"></script>
+	<script type = "text/javascript">
+		$(document).ready(changeMe); // no quotation two slide document object
+		function changeMe(){
+			$("#output").html("I changed 2 with $(document).ready(changeMe); ");
+		}
+	 </script>
+</head>
+<body>
+	<h1>Basic jQuery demo</h1>
+	<div id = "output">
+		Did this change?
+	</div>
+	<p>The initialization function is created with the $(document).ready()function. This technique tells the browser to execute a function when the DOM has finished loading (so that it has access to all elements of the form) but before the page is displayed (so that any effects
+		of the form appear instantaneous to the user).</p>
+</body>
+</html>

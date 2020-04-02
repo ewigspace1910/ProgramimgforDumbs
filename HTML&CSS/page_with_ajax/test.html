@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+ <title>readJSON.html</title>
+ <meta charset = "UTF-8" />
+ <style type = "text/css">
+ dt {
+ font-weight: bold;
+ float: left;
+ width: 5em;
+ margin-left: 1em;
+ clear: left;
+ }
+ </style>
+ <script type = "text/javascript"
+ src = "jquery-1.10.2.min.js"></script>
+ <script type = "text/javascript">
+ $(init);
+ function init(){
+ $.getJSON("pets.json", processResult);
+ } // end init
+ function processResult(data){
+ $("#output").text("");
+ for(petName in data){
+ var pet = data[petName];
+ $("#output").append("<h2>" + petName + "<h2>");
+ $("#output").append("<dl>");
+ for (detail in pet){
+ $("#output").append(" <dt>" + detail + "<\/dt>");
+ $("#output").append(" <dd>" + pet[detail] + "<\/dd>");
+ } // end for
+ $("#output").append("<\/dl>");
+ } // end for
+ } // end processResults
+ </script>
+</head>
+<body>
+	<h1>Reading JSON</h1>
+	<div id = "output">
+		This is the default output
+	</div>
+</body>
+</html>

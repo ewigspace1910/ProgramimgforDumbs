@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>asynch.html</title>
+ <script type = "text/javascript">
+ var request; //make request object a global variable
+ function getAJAX(){
+ request = new XMLHttpRequest();
+ request.open("GET", "beast.txt");
+ request.onreadystatechange = checkData;
+ request.send(null);
+ } // end function
+ function checkData(){
+ if (request.readyState == 4) {
+ // if state is finished
+ if (request.status == 200) {
+ // and if attempt was successful
+  alert(request.responseText);
+ } // end if
+ } // end if
+ } // end checkData
+ </script>
+</head>
+<body>
+<h1>Asynchronous AJAX transmission</h1>
+<form action = "">
+ <p>
+ <button type = "button"
+ onclick = "getAJAX()">
+ Summon the beast of Caerbannogh
+ </button>
+ </p>
+</form>
+</body>
+</html>
