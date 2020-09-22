@@ -1,0 +1,36 @@
+*{
+	margin : 0 0 0 0;
+	padding : 0 0 0 0;
+	text-decoration : none;
+}
+
+html,body {
+	width : 100%;
+}
+h1{
+	text-align : center;
+	color : Red;
+}
+/*other code */
+.clean{
+	width : 100%;
+	height : 20px;
+}
+/*background*/
+table{
+	margin : 0 auto 0 auto;
+	width : 90%;
+	border-collapse: collapse;
+}
+td {
+	width : 50px;
+	height : 50px;
+	border : 1px solid gray;
+	transition : 0.8s;
+	
+}
+td:hover{
+	background-color : #fce;
+	border : 3px solid white inside;
+}
+

@@ -1,0 +1,52 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="describes" content="game battel ship basic"  />
+		<meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+		<meta name="author" content="dapik1910" />
+		<meta name="viewport" content="width=width-device, initial-scale=1.0"  />
+		<title>Battle ver 1.0</title>
+		<link rel="stylesheet" href="css/basic.css" type="text/css" />
+		<link rel="stylesheet" href="css/gameplay.css" type="text/css" />
+		<script type="text/javascript">
+			function changeBgColor(){
+				var Color= document.getElementById("txtcol");
+				document.body.style.backgroundColor = Color.value;
+				alert("you can change backgroundColor more by #ccc,#csd,...");
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" id="txtcol" placeholder="change background by #+cdf" onchange="changeBgColor()" />
+		
+		<!-- yourcode put here--->
+		<div id="all" >
+			<div class="clean"></div>
+			<div class="board-game" id="board"></div>
+			<div class="clean"></div>
+			<div class="user-controls" id="user">
+				<div class="info-user">
+					<p><strong>Name : </strong> ten cua ban khong quan trong</p>
+				</div><hr/>
+				<div class="controls-panel">
+					<div>
+						<h2>Game Battle Ship</h2>
+						<p>tìm kiếm tàu địch trước khi bị chúng bắn cho nát thuyền</p>
+					</div>
+					<div>
+						<span>Level</span>
+						<input type="range" id="txtNum" min="5" max="20" value="10"/>
+						<button type="button" onclick="setupBoard()" >PLAY!</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<!--file js put here -->
+		<script src="js/basic.js" ></script>
+		<script src="js/play.js" ></script>
+		<script src="js/obj.js"></script>
+	</body>
+</html>

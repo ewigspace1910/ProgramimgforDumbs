@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta name = "describer" content="hihii" />
+		<meta name = "auther" content="dankdepzai" />
+		<meta name = "keys" content="js,html,css" />
+		<meta name = "viewport" content="width=width-device, initial-scale= 1.0" />
+		<title>blur images ver2</title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<style>
+			h1{text-align :center}
+			#all{position : relative;
+				width : 100%;
+				margin : 10px auto 0 auto;
+			}
+			img{width : 300px; height : 300px; 
+				transition : 0.5s;
+				opacity : 0;
+			}
+			.hide{
+				opacity : 1;
+			}
+			div {border : 2px solid gray;margin :10px; display : inline-block;}
+		</style>
+	</head>
+	<body>
+			<h1>click to unblur images</h1>
+			<div><img src="img1.png" alt="img1" id="img1"/></div>
+			<div><img src="img2.png" alt="img1" id="img2"/></div>
+			<div><img src="img3.png" alt="img1" id="img3"/></div>
+			<div><img src="img4.png" alt="img1" id="img4"/></div>
+			<div><img src="img5.png" alt="img1" id="img5"/></div>
+			<div><img src="img6.png" alt="img1" id="img6"/></div>
+		
+		<script>
+			window.onload = init; // assign handler
+			function init(){
+				var images = document.getElementsByTagName("img"); // this is NoteList DOM
+				for(var i=0;i<images.length;i++)
+					images[i].onclick = showImage; //assign handler to image
+			}
+			function showImage(eventObj){
+				var img = eventObj.target; // target property give Object generate event 
+				img.setAttribute("class","hide");
+				//set time to hide
+				setTimeout(hideImage,3000,img);
+			}
+			function hideImage(img){
+				img.removeAttribute("class")
+			}	
+			
+			
+		</script>
+	</body>
+</html>

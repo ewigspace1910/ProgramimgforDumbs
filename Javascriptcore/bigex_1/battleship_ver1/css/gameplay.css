@@ -1,0 +1,22 @@
+.obj-hidden{
+	opacity : 0;
+}
+/*usercss */
+.user-controls{
+	width : 70%;
+	height : auto;
+	position : relative;
+	left : 15%;
+	border : 2px double red;
+	background-color : #ffcedd;
+}
+.info-user,.info-character,.controls-panel{
+	width :90%;
+	height : auto;
+	overflow : hidden;
+	
+}
+#notice {
+	color : red;
+	padding : 10px 0 10px 25px;
+}

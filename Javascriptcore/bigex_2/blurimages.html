@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta name = "describer" content="hihii" />
+		<meta name = "auther" content="dankdepzai" />
+		<meta name = "keys" content="js,html,css" />
+		<meta name = "viewport" content="width=width-device, initial-scale= 1.0" />
+		<title>blur images</title>
+		<style>
+			h1{text-align :center}
+			#all{position : relative;
+				width : 100%;
+				margin : 10px auto 0 auto;
+			}
+			img{width : 300px; height : 300px; margin :10px;
+				border : 2px solid gray;
+			}
+			.hide{
+				opacity : 0.2;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="all">
+			<h1>click to unblur images</h1>
+			<img src="img1.png" alt="img1" id="img1"/>
+			<img src="img2.png" alt="img1" id="img2"/>
+			<img src="img3.png" alt="img1" id="img3"/>
+			<img src="img4.png" alt="img1" id="img4"/>
+			<img src="img5.png" alt="img1" id="img5"/>
+			<img src="img6.png" alt="img1" id="img6"/>
+		</div>
+		<script>
+			window.onload = init; // assign handler
+			function init(){
+				var image = document.getElementById("img1");
+				image.onclick = hideImage; //assign handler to image
+			}
+			function hideImage(eventObj){
+				//onclick pass to hideImage a EventObject
+				console.log("\n about event");
+				console.log(typeof(eventObj));
+				console.log(eventObj.timeStamp);
+				console.log(eventObj.type);
+				console.log(eventObj.clientX);
+				console.log(eventObj.clientY);
+				
+				console.log("\n about target OBJ");
+				var img = eventObj.target; // target property give Object generate event 
+				console.log(img.id);
+				img.setAttribute("class","hide");
+			}
+		</script>
+	</body>
+</html>

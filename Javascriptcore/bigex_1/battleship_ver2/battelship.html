@@ -1,0 +1,41 @@
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="describes" content="game battel ship basic"  />
+		<meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+		<meta name="author" content="dapik1910" />
+		<meta name="viewport" content="width=width-device, initial-scale=1.0"  />
+		<title>Battle ver 1.0</title>
+		<link rel="stylesheet" href="css/basic.css" type="text/css" />
+		<link rel="stylesheet" href="css/gameplay.css" type="text/css" />
+		<script type="text/javascript">
+			function changeBgColor(){
+				var Color= document.getElementById("txtcol");
+				document.body.style.backgroundColor = Color.value;
+			}	
+		</script>
+	</head>
+	<body>
+		<input type="color" id="txtcol" onchange="changeBgColor()" />
+		
+		<!-- yourcode put here--->
+		<div id="all" >
+			<div id="messageBox" class="message-box">Thông báo : </div>
+			<div class="board-game" id="board">
+				<table></table>
+			</div>
+			<div class="user" id="user">
+				<form action="">
+					<input type="text" placeholder="10 or other" id="txtInput" />
+					<button type="button" class="fire-style-btn" onclick="" >FIRE</button>
+				</form>
+			</div>
+		</div>
+		
+		<!--file js put here -->
+		<script src="js/basic.js" ></script>
+		<script src="js/ControllerObj.js" ></script>
+		<script src="js/ModelObj.js" ></script>
+		<script src="js/ViewObj.js" ></script>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta name = "describer" content="hihii" />
+		<meta name = "auther" content="dankdepzai" />
+		<meta name = "keys" content="js,html,css" />
+		<meta name = "viewport" content="width=width-device, initial-scale= 1.0" />
+		<title>blur images ver3</title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<style>
+			h1{text-align :center}
+			#all{position : relative;
+				width : 100%;
+				margin : 10px auto 0 auto;
+			}
+			img{width : 300px; height : 300px; 
+				transition : 0.5s;
+				opacity : 0;
+			}
+			.hide{
+				opacity : 1;
+			}
+			div {border : 2px solid gray;margin :10px; display : inline-block;}
+			span{
+				width : 250px;
+				min-height : 30px;
+				background-color : #dee;
+				border : 2px solid gray;
+				display : inline-block;
+				position : fixed;
+				top : 60%;
+				right : 10px;
+			}
+		</style>
+	</head>
+	<body>
+			<h1>click to unblur images</h1>
+			<div><img src="img1.png" alt="img1" id="img1"/></div>
+			<div><img src="img2.png" alt="img1" id="img2"/></div>
+			<div><img src="img3.png" alt="img1" id="img3"/></div>
+			<div><img src="img4.png" alt="img1" id="img4"/></div>
+			<div><img src="img5.png" alt="img1" id="img5"/></div>
+			<div><img src="img6.png" alt="img1" id="img6"/></div>
+			<div><span id="coordinates"></span></div>
+			
+		
+		<script>
+			window.onload = init; // assign handler
+			var ttloop = setInterval(tictak,1000);
+			function init(){
+				var images = document.getElementsByTagName("img"); // this is NoteList DOM
+				for(var i=0;i<images.length;i++)
+					images[i].onmouseover = showImage; //assign handler to image
+					
+				//other with time event
+				
+				document.onmouseover = coordinatesMouse;
+				window.onresize = resize;
+			}
+			function showImage(eventObj){
+				var img = eventObj.target; // target property give Object generate event 
+				img.setAttribute("class","hide");
+				//set time to hide
+				setTimeout(hideImage,3000,img);
+			}
+			function hideImage(img){
+				img.removeAttribute("class")
+			}	
+			function coordinatesMouse(eventObj){
+				var nofice = document.getElementById("coordinates");
+				nofice.innerHTML = "mouse's coordinates -> ( " + eventObj.clientX + "," + eventObj.clientY + ")";
+			}
+			var x=0
+			function tictak(){
+				if (x%2===0)console.log("tick");
+				else console.log("tac");
+				x++;
+				if (x===5){
+					console.log("exit loop");
+					clearInterval(ttloop);
+					//just assign loop for variable to can clear
+					// and var must goble or you pass it's reference.....
+					// more thing to learn
+				} 
+			}
+			function resize(){
+				alert("you resize browser");
+			}
+		</script>
+	</body>
+</html>

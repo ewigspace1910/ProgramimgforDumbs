@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta charset = "UTF-8" />
+	<meta name = "authur" content="Bo Nguyen Duc Anh"/>
+	<title>TEST</title>
+	<script src="js6.js" type="text/javascript"></script>
+	
+	<link  href="style.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+	<script type="text/javascript">
+		document.bgColor = "#cccccc";
+	</script>
+	<div id="box-container">
+		<h1>hihihii</h1>
+		<div id="box-1"></div>
+		<div id="box-2"></div>
+	</div>
+	
+	<!-- lam mau -->
+	<div class="wrapper">
+		<div class="display">
+			<div id="time"></div>
+		</div>
+    </div>
+	<script>
+      setInterval(()=>{
+        const time = document.querySelector(".display #time");
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let day_night = "AM";
+        if(hours > 12){
+          day_night = "PM";
+          hours = hours - 12;
+        }
+        if(seconds < 10){
+          seconds = "0" + seconds;
+        }
+        if(minutes < 10){
+          minutes = "0" + minutes;
+        }
+        if(hours < 10){
+          hours = "0" + hours;
+        }
+        time.textContent = hours + ":" + minutes + ":" + seconds + " "+ day_night;
+      });
+    </script>
+
+</body>
+</html>
+
+<!-- <script src="jspr1.js" type="text/javascript"></script> 
+	<script src="js.js" type="text/javascript"></script>
+	<script src="js2.js" type="text/javascript"></script>
+	<script src="js3.js" type="text/javascript"></script>
+	<script src="js4.js" type="text/javascript"></script>
+	<script src="js5.js" type="text/javascript"></script>
+-->

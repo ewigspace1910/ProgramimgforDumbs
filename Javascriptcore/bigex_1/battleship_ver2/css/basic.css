@@ -1,0 +1,57 @@
+*{
+	margin : 0 ;
+	padding : 0;
+	text-decoration : none;
+	font-family : "sans-serif";
+}
+
+html,body {
+	width : 100%;
+}
+body {background-color : #ccc;}
+/*code here*/
+
+.message-box{
+	position : fixed;
+	color :red;
+	top : 0px;
+	left : 50px;
+}
+.user {
+	position : fixed;
+	right : 10px;
+	bottom :25px;
+	border : 1px double green;
+	width : 250px;
+	height : 30px;
+	background-color : rgba(35, 80, 26,0.5);
+}
+.user form {
+	margin: 5px auto;
+    padding: 0px 15px;
+}
+.board-game{
+	width : 90%;
+	height : 90vh;
+	position : relative;
+	margin :
+	
+}
+.board-game table {
+	width : 100%;
+	height :auto;
+	margin : 10px auto 0 5%;
+	border-collapse : collapse;
+}
+.board-game td{
+	height : 60px;
+	border : 2px solid gray;
+}
+.hit{
+	background: url(../images/enemyship.png) no-repeat;
+    background-size: cover;
+    background-position: center
+}
+.miss{
+	
+}
